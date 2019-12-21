@@ -1,14 +1,16 @@
 # Network Scanning
 
-In a nutshell, the objective is to identify open ports on a host(s), identify what services are running on the open ports and then find if there are any vulnerabilities present in the services that are exposed.  The most common network mapping software within penetration testing for achieving this is **nmap**.  
+In a nutshell, the objective is to identify open ports on a host(s), identify what services are running on the open ports and then find if there are any vulnerabilities present in the services that are exposed.  The most common network mapping software within penetration testing for achieving this is **nmap**, which is available from https://nmap.org/download.  
 
-## Full TCP Scan
+## Full TCP Connect Scan
 
 A full TCP connect scan of all 65535 ports on a specified host can be initiated using the following nmap command:
 
 `nmap -vv -sT -p- 192.168.X.X`
 
-Nmap will perform a full TCP handshake with each port and return whether the port(s) are open or closed, along with an assumption of the service running on that port.  The `-sV` flag can be added to this command and will probe open ports further to determine more accurate service/version information. Obviously performing a scan against all ports on a target host(s) is noisy on the network, so be mindful of this if you are on an test where stealth is of importance (such as a Red Team engagement).
+Nmap will perform a full three-way TCP handshake with each port and return whether the port(s) are open or closed, along with an assumption of the service running on that port.  The `-sV` flag can be added to this command and will probe open ports further to determine more accurate service/version information. Obviously performing a scan against all ports on a target host(s) is noisy on the network, so be mindful of this if you are on an test where stealth is of importance (such as a Red Team engagement).
+
+## Full TCP Syn Scan
 
 ## Full UDP Scan
 
