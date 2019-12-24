@@ -4,4 +4,4 @@ A repository of general notes created by a security consultant to help people ne
 
 ## Contents
 
-1 [Open Source Intelligence (OSINT)](PenetrationTesting/Open-Source-Intelligence/readme.md)
+1 [Open Source Intelligence (OSINT)](Penetration-Testing/Open-Source-Intelligence/readme.md)
