@@ -20,7 +20,16 @@ A tool named **smbmap** can also be used to enumerate file shares on a system.  
 `smbmap -H 192.168.X.X`
 
 ### Relative Identifier (RID) Enumeration
-Once a null session has been obtained it is possible to enumerate users on a Windows domain using RID cycling.  A tool named **RidEnum** can be used to enumerate valid users on the system.  Note that a RID of `500` would be the default administrator account.  
+Once a null session has been obtained it is possible to enumerate users on a Windows domain using RID cycling.  A tool named **RidEnum** can be used to enumerate valid users on the system.  Note that a RID of `500` would be the default built-in Windows administrator account.  Even if renamed, the account would still retain the same RID.  Newly created user accounts start at a RID of `1000`.  
+
+The following command can be used to enumerate RID's from 500 - 20,000:
+
+`ridenum.py 192.168.X.X 500 20000`
+
+Optionally a password list can be specified, which will attempt to brute force passwords of any valid users found:
+
+
+`ridenum.py 192.168.X.X 500 20000 /usr/share/wordlists/password.lst`
 
 ## Enumerating SMB File Shares
 
