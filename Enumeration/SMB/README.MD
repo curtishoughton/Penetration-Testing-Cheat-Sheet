@@ -40,5 +40,3 @@ If a valid username, password and workgroup is known this can be specified as so
 To use smbmap with a password has that has been obtained, both the LM and NT hashes must be specified.  Modern operating systems no longer use the LM hash, therefore it can be replaced with the 'blank' LM hash `aad3b435b51404eeaad3b435b51404ee`:
 
 `smbmap -u username -p 'aad3b435b51404eeaad3b435b51404ee:NTHASH' -H 192.168.X.X`
-
-
