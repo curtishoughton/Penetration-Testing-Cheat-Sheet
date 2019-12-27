@@ -5,4 +5,4 @@ A repository of general notes created by a security consultant to help people ne
 ## Contents
 
 1) [Open Source Intelligence (OSINT)](Open-Source-Intelligence/readme.md)
-2) [Host Discovery](host-discovery/readme.md)
+2) [Host Discovery](host-discovery/README.md)
