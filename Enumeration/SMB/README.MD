@@ -19,7 +19,7 @@ A tool named **smbmap** can also be used to enumerate file shares on a system.  
 
 `smbmap -H 192.168.X.X`
 
-##Enumerating SMB File Shares
+## Enumerating SMB File Shares
 
 If a valid username, password and workgroup is known this can be specified as so:
 
