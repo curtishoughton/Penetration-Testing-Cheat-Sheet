@@ -19,6 +19,9 @@ A tool named **smbmap** can also be used to enumerate file shares on a system.  
 
 `smbmap -H 192.168.X.X`
 
+### Relative Identifier (RID) Enumeration
+Once a null session has been obtained it is possible to enumerate users on a Windows domain using RID cycling.  A tool named **RidEnum** can be used to enumerate valid users on the system.  Note that a RID of `500` would be the default administrator account.  
+
 ## Enumerating SMB File Shares
 
 If a valid username, password and workgroup is known this can be specified as so:
@@ -28,3 +31,5 @@ If a valid username, password and workgroup is known this can be specified as so
 To use smbmap with a password has that has been obtained, both the LM and NT hashes must be specified.  Modern operating systems no longer use the LM hash, therefore it can be replaced with the 'blank' LM hash `aad3b435b51404eeaad3b435b51404ee`:
 
 `smbmap -u username -p 'aad3b435b51404eeaad3b435b51404ee:NTHASH' -H 192.168.X.X`
+
+
