@@ -3,6 +3,7 @@
 ## WHOIS
 
 The following command can be used to perform a WHOIS lookup on a domain:
+
 `whois example.com`
 
 
