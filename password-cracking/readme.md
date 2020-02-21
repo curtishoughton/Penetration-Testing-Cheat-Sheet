@@ -1,4 +1,4 @@
 # Password Cracking
 This section of the repository will cover both online and offline password cracking techniques for a number of services and file types using tools such as HashCat, John The Ripper Jumbo, Hydra and Ncrack:
 
-
+1) [Hashcat](password-cracking/hashcat/readme.md)
