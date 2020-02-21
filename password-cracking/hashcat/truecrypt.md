@@ -8,7 +8,6 @@ To crack the password of a Truecrypt outer container you will need to copy out t
 Hashcat has a number of modes available for cracking Truecrypt containers based upon the encryption and hashing algorithms used.  In this example `TrueCrypt 5.0+ SHA512 + AES ` mode `6221` will be used with a dictionary attack.  The full list of options is available from the hashcat help menu:
 
 ``` 
-  14800 | iTunes backup >= 10.0                            | Backup
    62XY | TrueCrypt                                        | Full-Disk Encryption (FDE)
      X  | 1 = PBKDF2-HMAC-RIPEMD160                        | Full-Disk Encryption (FDE)
      X  | 2 = PBKDF2-HMAC-SHA512                           | Full-Disk Encryption (FDE)
