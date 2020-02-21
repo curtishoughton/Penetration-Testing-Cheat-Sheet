@@ -22,3 +22,27 @@ Hashcat has a number of modes available for cracking Truecrypt containers based 
       Y | 2 = XTS 1024 bit cascaded AES-Twofish            | Full-Disk Encryption (FDE)
       Y | 2 = XTS 1024 bit cascaded Serpent-AES            | Full-Disk Encryption (FDE)
 ```
+Hashcat can now be used on the 512 byte container header with a password dictionary of choice using attack mode 0 (dictionary).  The list of attack modes can be found within the Hashcat help menu:
+
+```
+- [ Attack Modes ] -
+
+  # | Mode
+ ===+======
+  0 | Straight
+  1 | Combination
+  3 | Brute-force
+  6 | Hybrid Wordlist + Mask
+  7 | Hybrid Mask + Wordlist
+
+```
+The command to run hashcat againt the container header - within powershell - would look like:
+`.\hashcat64.exe -a 0 -m 6221 container_to_crack512bytes.tc password_list.txt`
+
+Where:
+`-a 0` - Attack Mode 0 Dictionary Attack
+`-m 6221` - Mode for cracking TrueCrypt 5.0+ SHA512 + AES
+`container_to_crack512bytes.tc` - This is the file name you have given to the first 512 bytes you have copied from the container
+`password_list.txt` - The password dictionary you have chosen to use.
+
+This method can be applied to all containers, however it may be trial and error with the cracking modes if you do not know the Encryption / Hashing algorithm used.
