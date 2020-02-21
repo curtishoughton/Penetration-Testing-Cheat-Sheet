@@ -54,7 +54,7 @@ This method can be applied to all containers, however it may be trial and error 
 
 In this case the password for the container was found to be "hashcat"
 ```
-..\hashcat_sha512_aes.tc:**hashcat**
+..\hashcat_sha512_aes.tc: **hashcat**
 
 Session..........: hashcat
 Status...........: Cracked
