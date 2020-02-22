@@ -76,4 +76,32 @@ Hardware.Mon.#3..: Temp: 65c
 
 ## Truecrypt Hidden Container
 
-Now the interesting part, recovering the password for a hidden Truecrypt container.  For this you will need to use Truecrypt (in my case 7.2), to generate a containter that contains another hidden container within.  
+Now the interesting part, recovering the password for a hidden Truecrypt container.  For this you will need to use Truecrypt (in my case 7.1a), to generate a containter that contains another hidden container within.
+
+To find the header of the hidden container, you will have to count backwards `65536` bytes from the end of the container - in a hex editor - then select 512 bytes from that point and copy them into a new file using the hex editor. I used HxD to do this, but you could use any.  This will give you the header necessary to crack the password of the hidden volume.  The same process can be used as documented within the "Truecrypt Outer Container" section above.
+
+The outer container containing the hidden volume and the hidden volume were were generaed using `PBKDF2-HMAC-RIPEMD160` and `XTS  512 bit pure AES`, which meant mode `6211` was used in this instance.
+
+`.\hashcat64.exe -a 0 -m 6211 hidden_vol_512bytes.tc password_dictionary.txt`
+
+```
+..\testhidden.tc:hiddenvol
+
+Session..........: hashcat
+Status...........: Cracked
+Hash.Type........: TrueCrypt PBKDF2-HMAC-RIPEMD160 + XTS 512 bit
+Hash.Target......: ..\testhidden.tc
+Time.Started.....: Sat Feb 22 00:26:50 2020 (1 sec)
+Time.Estimated...: Sat Feb 22 00:26:51 2020 (0 secs)
+Guess.Base.......: File (.\pass.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#3.........:       32 H/s (1.05ms) @ Accel:32 Loops:16 Thr:64 Vec:1
+Recovered........: 1/1 (100.00%) Digests, 1/1 (100.00%) Salts
+Progress.........: 5/5 (100.00%)
+Rejected.........: 0/5 (0.00%)
+Restore.Point....: 0/5 (0.00%)
+Restore.Sub.#3...: Salt:0 Amplifier:0-1 Iteration:1984-1999
+Candidates.#3....: test -> outerpas
+Hardware.Mon.#3..: Temp: 50c
+
+```
