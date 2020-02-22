@@ -73,3 +73,7 @@ Restore.Sub.#3...: Salt:0 Amplifier:0-1 Iteration:990-999
 Candidates.#3....: test -> hashcat
 Hardware.Mon.#3..: Temp: 65c
 ```
+
+##Truecrypt Hidden Container
+
+Now the interesting part, recovering the password for a hidden Truecrypt container.  For this you will need to use Truecrypt (in my case 7.2), to generate a containter that contains another hidden container within.  
