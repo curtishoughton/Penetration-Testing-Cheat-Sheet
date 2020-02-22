@@ -80,7 +80,7 @@ Now the interesting part, recovering the password for a hidden Truecrypt contain
 
 To find the header of the hidden container, you will have to count backwards `65536` bytes from the end of the container - in a hex editor - then select 512 bytes from that point and copy them into a new file using the hex editor. I used HxD to do this, but you could use any.  This will give you the header necessary to crack the password of the hidden volume.  The same process can be used as documented within the "Truecrypt Outer Container" section above.
 
-The outer container containing the hidden volume and the hidden volume were were generaed using `PBKDF2-HMAC-RIPEMD160` and `XTS  512 bit pure AES`, which meant mode `6211` was used in this instance.
+The outer container containing the hidden volume and the hidden volume were were generaed using `PBKDF2-HMAC-RIPEMD160` and `XTS  512 bit pure AES`, which meant mode `6211` was used in this instance.  The password for the hidden volume was set to `hiddenvol`.
 
 `.\hashcat64.exe -a 0 -m 6211 hidden_vol_512bytes.tc password_dictionary.txt`
 
