@@ -8,6 +8,9 @@ A repository of general notes created by a security consultant to help people ne
 2) [Host Discovery](host-discovery/README.md)
 3) [Network Scanning](Network-Scanning/README.md)
 4) [Enumeration](Enumeration/readme.md)
+5)
+6)
 
 ## Techniques
 1) [Password Cracking](password-cracking/readme.md)
+2) [Buffer Overflows](Buffer-Overflow/readme.md)
