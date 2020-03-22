@@ -98,5 +98,9 @@ This can be bypassed by executing a program a number of times, until the same ad
 
 ```for i in `seq 0 500`; do /usr/local/bin/ovrflw `python exploit.py`;done```
 
+Once the buffer overflow is successful, the "/bin/sh" shell will be ran as the root user, due to the SUID bit being set on the binary.
+
+### Second Exploit Method python
+
 
 
