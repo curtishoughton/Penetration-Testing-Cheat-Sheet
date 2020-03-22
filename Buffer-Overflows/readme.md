@@ -33,6 +33,15 @@ The program can now be run by pressing the "r" key followed by the none repeatin
 To continue the exection of the program the "c" key can be pressed.  This will result in a "
 Program received signal SIGSEGV, Segmentation fault." error.
 
+To view the curent values of the registers within GDB use the command:
+`info registers`
+
+Take the value held in the EIP register.  In this case it is `0x64413764`.  This value can be passed into msf-pattern_offset to find out the offset necessary to crash the program:
+
+```msf-pattern_offset -q 0x64413764```
+
+This showed the offset necessary to overwrite EIP was 112.
+
 
 ### Python Exploit Code
 ```#!/usr/bin/python
