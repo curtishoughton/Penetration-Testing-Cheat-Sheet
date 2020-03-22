@@ -1,7 +1,7 @@
 # Buffer Overflows
 
 ## Return Oriented Programming (ROP) Buffer Overflow
-The following commands can be used in a Return Oriented Programming (ROP) buffer overflow attack to bypass NX/DEP protection.  The following example makes use of the `ovrflw` ELF binary found on the October Hack The Box machine.  All tools necessary are built into Kali Linux.
+The following commands can be used in a Return Oriented Programming (ROP) buffer overflow attack to bypass NX/DEP protection.  The following example makes use of the `ovrflw` ELF Linux binary found on the October Hack The Box machine.  All tools necessary are built into Kali Linux.
 
 The ovrflw binary is 32 bit and has NX enabled and the system has Address Space Layout Randomisation enabled.
 
@@ -40,7 +40,21 @@ Take the value held in the EIP register.  In this case it is `0x64413764`.  This
 
 ```msf-pattern_offset -q 0x64413764```
 
-This showed the offset necessary to overwrite EIP was 112.
+This showed the offset at the point EIP was overwritten was 112.  This means that 112 characters can be passed to the program to generate a segmentation fault.  
+
+Now three values are necessary to exploit the buffer overflow.  The addresses of system, exit and "/bin/sh".
+
+GDB can be used to find the address of system by running the following commands
+``` gdb ./ovrflw 
+b main
+r
+p system
+```
+The `p system` command will give the address of where `system` is located, which in this case is `0xb765c310`.
+
+Now to get the offset of "/bin/sh". GDB can be used to search for this value using the find command:
+
+`find 0xb7646310, +999999, "/bin/sh"`
 
 
 ### Python Exploit Code
