@@ -8,6 +8,20 @@ The following command can be used to perform a WHOIS lookup on a domain:
 
 `whois example.com`
 
+Find names of objects containing example within ARIN database:
+
+`whois -a "z / example*"`
+
+Enumerate email accounts belonging to example objects in ARIN database:
+
+`whois -a "z @ example*"`
+
+Enumerate names of objects containing example in APNIC database:
+
+`whois -A example`
+
+
+
 ### Google Hacking
 
 `intitle:`  - Search for text within page title
