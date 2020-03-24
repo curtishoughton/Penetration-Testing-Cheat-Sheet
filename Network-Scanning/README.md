@@ -29,7 +29,7 @@ The command will use nmap to scan all UDP ports on the target system and return 
 
 ## Covert NMAP Scans
 
-#### NMAP with TOR and Proxychains
+### NMAP with TOR and Proxychains
 
 NMAP can be used in conjunction with TOR and proxychains to carry out a covert NMAP scan over the TOR network.  TOR can be installed within Kali Linux using the command `apt-get install tor`.  Once installed, TOR can be started within Kali Linux wihin a terminal by typing:
 
@@ -49,3 +49,11 @@ Proxychains, by default, is set to route traffic through TOR using a SOCKS4 prox
 `proxychains nmap -sT -p 80,443,3389 -vv <IP ADDRESS>`
 
 The command above route the nmap scan, using proxychains over the TOR network.
+
+### Socat HTTP Relay Over TOR
+
+Socat can be used to create a persistent connection to a server over TOR, which will anonymise all traffic.  The following command can be used to open a local listening port with SOCAT on 8080, which will route all traffic over TOR to the destination server:
+
+`socat TCP4-LISTEN:8080,fork SOCKS4a:127.0.0.1:<server_IP>:80,socksport=9050 &`
+
+Once the connection has been established, any additional scans, such as Nikto, can be ran against 127.0.0.1 port 8080.  Any traffic sent will be routed over the TOR network to the destination server.
