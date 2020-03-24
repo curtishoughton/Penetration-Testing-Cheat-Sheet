@@ -20,7 +20,9 @@ Enumerate names of objects containing example in APNIC database:
 
 `whois -A example`
 
-### DNS Zone Transfers
+### Domain Name System (DNS) Enumeration
+
+#### DNS Zone Transfers
 
 The following command can be used to attempt a DNS zone transfer:
 
