@@ -1,13 +1,15 @@
 # Open Source Intelligence (OSINT)
 
-## WHOIS
+## Passive
+
+### WHOIS
 
 The following command can be used to perform a WHOIS lookup on a domain:
 
 `whois example.com`
 
 
-## DNS Zone Transfers
+### DNS Zone Transfers
 
 The following command can be used to attempt a DNS zone transfer:
 
