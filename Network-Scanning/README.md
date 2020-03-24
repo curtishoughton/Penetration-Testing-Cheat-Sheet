@@ -41,7 +41,8 @@ This will establish a connection to the TOR network using port 9050.  Proxychain
 # add proxy here ...
 # meanwile
 # defaults set to "tor"
-socks4  127.0.0.1 9050```
+socks4  127.0.0.1 9050
+```
 
 Proxychains, by default, is set to route traffic through TOR using a SOCKS4 proxy.  Once TOR is started and the proxychains configuration file has been configured, nmap scans can now be made using the proxychains command:
 
