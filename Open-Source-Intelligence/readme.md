@@ -9,10 +9,15 @@ The following command can be used to perform a WHOIS lookup on a domain:
 `whois example.com`
 
 ### Google Hacking
+
 `intitle:`  - Search for text within page title
+
 `intext:`   - Search for text within a webpage
+
 `inurl:`    - Search for hits within page URL
+
 `filetype:` - Return results for specific file type
+
 `site:`     - Show results for a particular domain
 
 
