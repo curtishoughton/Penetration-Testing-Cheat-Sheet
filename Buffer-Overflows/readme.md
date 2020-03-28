@@ -100,7 +100,7 @@ This can be bypassed by executing a program a number of times, until the same ad
 
 Once the buffer overflow is successful, the "/bin/sh" shell will be ran as the root user, due to the SUID bit being set on the binary.
 
-### Second Exploit Method python
+### Second Exploit Method Using Python
 
 
 
