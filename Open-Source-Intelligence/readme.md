@@ -32,9 +32,10 @@ This will attempt to access replicate/copy records contained within the DNS data
 
 ### BGP (Border Gateway Protocol) Enumeration
 
-The following commands can be used for enumerating Autonomous System Numbers (ASN)
-
-
+Often whois queries on an organisations domain will reveal its Autonomous System Numbers (ASN).  BGP is used to route traffic between internet networks using their AS numbers.  The following website can be used to search for details relating to a specific ASN:
+```
+bgp.he.net/ASXXXXX
+```
 
 ### Google Hacking
 
