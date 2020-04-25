@@ -22,13 +22,14 @@ Enumerate names of objects containing example in APNIC database:
 
 ### Domain Name System (DNS) Enumeration
 
-#### DNS Zone Transfers
 
-The following command can be used to attempt a DNS zone transfer:
+#### DNS Subdomain Enumeration
 
-`dig axfr example.com @ns1.example.com`
+The folloiwng tools with associated commands can be used to enumerate subdomains of a target domain.  Amass is provided by OWASP and is one of the most comprehensive domain enumeration tools with lots of extra functionality. To do a simple passive subdomain scan, which will return a list of subdomains, the following command can be used:
 
-This will attempt to access replicate/copy records contained within the DNS database for example.com from the primary DNS server.  This can give an accurate picture of how both internal and external domains are set up, along with what IP addresses are associated with those domains.  Attempt a DNS zone transfer if TCP port 53 is exposed on the webserver.  Note that typically DNS utilises UDP on port 53.
+`amass enum -d example.com`
+
+
 
 ### BGP (Border Gateway Protocol) Enumeration
 
@@ -51,3 +52,13 @@ Where the X's are replaced with the specicif AS number you're searching.
 
 
 ## Active
+
+### Domain Name System (DNS) Enumeration
+
+#### DNS Zone Transfers
+
+The following command can be used to attempt a DNS zone transfer:
+
+`dig axfr example.com @ns1.example.com`
+
+This will attempt to access replicate/copy records contained within the DNS database for example.com from the primary DNS server.  This can give an accurate picture of how both internal and external domains are set up, along with what IP addresses are associated with those domains.  Attempt a DNS zone transfer if TCP port 53 is exposed on the webserver.  Note that typically DNS utilises UDP on port 53.
