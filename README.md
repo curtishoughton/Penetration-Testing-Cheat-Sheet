@@ -14,3 +14,5 @@ A repository of general notes created by a security consultant to help people ne
 ## Techniques
 1) [Password Cracking](password-cracking/readme.md)
 2) [Buffer Overflows](Buffer-Overflows/readme.md)
+
+## Cryptography
