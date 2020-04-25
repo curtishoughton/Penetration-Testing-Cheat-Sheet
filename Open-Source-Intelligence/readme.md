@@ -65,4 +65,9 @@ This will attempt to access replicate/copy records contained within the DNS data
 
 #### Reverse DNS Sweeping
 
-Reverse DNS sweeping is the proces
+Reverse DNS sweeping is the process of resolving a block of IP addresses to hostnames.  Once a netblock of interest has been indentified, nmap can be used in conjunction with grep and awk to format the results in "hostname  IP address" format:
+
+`nmap -sL 205.166.76.0/24 | grep "(" | awk '{printf("%s %s\n",$5,$6);}'`
+
+***The command listed above was documented in O'Rileys Network Security Assessment Volume 3***
+
