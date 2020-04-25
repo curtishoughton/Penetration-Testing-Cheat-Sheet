@@ -33,9 +33,9 @@ This will attempt to access replicate/copy records contained within the DNS data
 ### BGP (Border Gateway Protocol) Enumeration
 
 Often whois queries on an organisations domain will reveal its Autonomous System Numbers (ASN).  BGP is used to route traffic between internet networks using their AS numbers.  The following website can be used to search for details relating to a specific ASN:
-```
-bgp.he.net/ASXXXXX
-```
+`bgp.he.net/ASXXXXX`
+
+Where the X's are replaced with the specicif AS number you're searching.
 
 ### Google Hacking
 
