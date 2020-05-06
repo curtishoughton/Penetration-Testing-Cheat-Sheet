@@ -48,3 +48,12 @@ To use smbmap with a password has that has been obtained, both the LM and NT has
 Nmap contains NSE scripts that can be used for enumerating SMB shares:
 
 `nmap -p 445 -sT -vv --script=smb-enum-shares.nse,smb-enum-users.nse 192.168.X.X`
+
+## SMB File Retrieval
+
+## SMBGet
+
+Smbget can be used to recursively download files from an SMB file share:
+
+`smbget -R smb://<ip_address>/<sharenamegoeshere>`
+
