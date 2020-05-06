@@ -15,7 +15,10 @@ Showmount can be used to show a list of NFS exported file shares:
 
 The following command will query the RPC Portmapper on port 111 and detail what port NFS is currently running on, which is usually TCP/UDP Port 2049.  The nmap NSE scripts will show a list of the exported NFS shares and output from rpcinfo:
 
-`nmap -p 111 -sV -vv --script=nfs-ls,nfs-statfs,nfs-showmount 192.168.X.X`
+`nmap -p 111 -sV -vv --script=nfs-ls,nfs-statfs,nfs-showmount <ip_address>`
 
 ## Mounting NFS Shares
 
+Shares that are listed as being exported can be mounted within Linux using the following command:
+
+`mount -t nfs <ip_address>:/NameOfExportedShare /tmp/LocalMountPoint`
