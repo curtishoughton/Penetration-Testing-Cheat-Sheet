@@ -3,9 +3,11 @@
 
 ## Enumeration with Rpcinfo and Showmount
 
-Both rpcinfo and showmount can be used to show the port NFS is operating on along with viewing shares that have been exported
+Rpcinfo can be used to show the port NFS is operating on: 
 
 `rpcinfo -p <ip_address>`
+
+Showmount can be used to show a list of NFS exported file shares:
 
 `showmount -e <ip_address>`
 
