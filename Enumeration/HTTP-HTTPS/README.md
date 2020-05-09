@@ -18,6 +18,12 @@ Dirsearch has a built-in wordlist that can be used for bruteforcing directories 
 
 `python3 dirsearch.py -u http://<ip address>:<port>/ -e <file extensions>`
 
+### Dirb
+
+Dirb can also be used to brute-force directories and is built into Kali Linux by default.  Dirb should be used with smaller wordlists, as large wordlists will often cause the program to hang or close. Note that any wordlists that already have `/` appended to them, would need the forward slash removing, due to dirb appending its own.  The following command can be used to discover directories on a web server:
+
+``
+
 ### Common Wordlists Used
 
 A number of wordlists that are commonly used for directory/file fuzzing are available in Kali Linux:
