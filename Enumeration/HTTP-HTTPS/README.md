@@ -18,8 +18,9 @@ Gobuster will iterate through the wordlist provided and also append the file ext
 
 ### Common Wordlists Used
 
-A number of wordlists are commonly used and are available in Kali Linux:
-
-``
+A number of wordlists that are commonly used for directory/file fuzzing are available in Kali Linux:
+`/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt`
+`/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt`
+`/usr/share/wordlists/dirb/common.txt`
 
 
