@@ -14,7 +14,9 @@ Gobuster will iterate through the wordlist provided and also append the file ext
 
 ### DirSearch
 
+Dirsearch has a built-in wordlist that can be used for bruteforcing directories and files.  Optionally a custom wordlist can be specified using the `-w /path/wordlist.txt` option: 
 
+`python3 dirsearch.py -u http://<ip address>:<port>/ -e <file extensions>`
 
 ### Common Wordlists Used
 
