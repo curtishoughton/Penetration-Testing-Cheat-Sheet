@@ -32,5 +32,5 @@ run
 
 ## Rlogin/Rwho Daemon
 
-
+The rlogin daemon, which by default operates on port 513, allows a user to login to a remote unix system. Access via 
 
