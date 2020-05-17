@@ -15,7 +15,7 @@ A repository of general notes created by a security consultant to help people ne
 1) [Password Cracking](password-cracking/readme.md)
 2) [Buffer Overflows](Buffer-Overflows/readme.md)
 3) [File Transfer Between Hosts](File-Transfer/readme.md)
-4) [Payload Generation](Payload-Generation/readme.md)
+4) [Payload Generation](Payload-Generation/README.md)
 
 ## Cryptography
 
