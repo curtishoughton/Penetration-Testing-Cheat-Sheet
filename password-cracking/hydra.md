@@ -35,3 +35,9 @@ To bruteforce SSH with Hydra the following command can be used:
 `hydra -L /path/to/username-list.txt -P /path/to/password-wordlist.txt -t 1 ssh://<IP_ADDRESS>`
 
 If SSH is running on a non-standard port, the `-s` parameter can be supplied to target an alternate port.
+
+### HTTP-POST-FORM
+
+To bruteforce a HTTP POST login form the following command can be used:
+
+hydra -L /path/to/username-list.txt -P /path/to/password-wordlist.txt http-post-form://<IP_ADDRESS>
