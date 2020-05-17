@@ -24,6 +24,7 @@ The following is a list of services supported by Hydra, taken from he help menu:
 Supported services: adam6500 asterisk cisco cisco-enable cvs firebird ftp[s] http[s]-{head|get|post} http[s]-{get|post}-form http-proxy http-proxy-urlenum icq imap[s] irc ldap2[s] ldap3[-{cram|digest}md5][s] memcached mongodb mssql mysql nntp oracle-listener oracle-sid pcanywhere pcnfs pop3[s] postgres radmin2 rdp redis rexec rlogin rpcap rsh rtsp s7-300 sip smb smtp[s] smtp-enum snmp socks5 ssh sshkey svn teamspeak telnet[s] vmauthd vnc xmpp
 
 ```
+Services can be specified using the `<service>://<IP_Address` syntax, where "service" is replaced with a supported service name such as SSH.
 
 ## Bruteforcing with Hydra
 
