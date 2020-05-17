@@ -1,6 +1,6 @@
 # Penetration-Testing
 
-A repository of general notes created by a security consultant to help people new to the field of penetration testing.
+A repository of general notes created by a security consultant to help people new to the field of penetration testing.  This repository is aimed at people looking to get into a career as a penetration tester, along aiding anyone looking to pass the CREST CRT or Offensive Security's OSCP exam.
 
 ## Contents
 
