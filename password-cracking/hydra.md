@@ -40,4 +40,4 @@ If SSH is running on a non-standard port, the `-s` parameter can be supplied to 
 
 To bruteforce a HTTP POST login form the following command can be used:
 
-`hydra -L /path/to/username-list.txt -P /path/to/password-wordlist.txt http-post-form://<IP_ADDRESS> -m /<loginPagePath>:UserNameParameter=^USER^&PasswordParameter=^PASS^&LoginIDParameter=<ID_of_login_button>:<message_if_login_fails>`
+`hydra -L /path/to/username-list.txt -P /path/to/password-wordlist.txt http-post-form://<IP_ADDRESS> -m /<loginPagePath>:UserNameParameter=^USER^&PasswordParameter=^PASS^&Login=<ID_of_login_button>:<message_if_login_fails>`
