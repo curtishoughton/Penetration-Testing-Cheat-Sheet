@@ -37,6 +37,12 @@ If you've outputted all your sublist3r output to a text file, you can use the fo
 
 `sublister_output.txt | awk '/-/ {print $1}' > new_output.txt`
 
+#### Checking DNS Bind Version
+
+To disclose DNS bind information the following command can be used:
+
+`host -c chaos -t txt version.bind dns11.domain.com`
+
 ### BGP (Border Gateway Protocol) Enumeration
 
 Often whois queries on an organisations domain will reveal its Autonomous System Numbers (ASN).  BGP is used to route traffic between internet networks using their AS numbers.  The following website can be used to search for details relating to a specific ASN:
