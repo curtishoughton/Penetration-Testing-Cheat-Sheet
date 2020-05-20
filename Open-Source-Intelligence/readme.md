@@ -33,6 +33,10 @@ Sublist3r is another great tool that can be used to both passively and actively 
 
 `sublist3r -d example.com`
 
+If you've outputted all your sublist3r output to a text file, you can use the following command to separate the url's on their own into a new file:
+
+`sublister_output.txt | awk '/-/ {print $1}' > new_output.txt`
+
 ### BGP (Border Gateway Protocol) Enumeration
 
 Often whois queries on an organisations domain will reveal its Autonomous System Numbers (ASN).  BGP is used to route traffic between internet networks using their AS numbers.  The following website can be used to search for details relating to a specific ASN:
