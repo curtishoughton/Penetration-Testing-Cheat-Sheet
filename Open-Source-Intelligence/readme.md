@@ -29,7 +29,9 @@ The folloiwng tools with associated commands can be used to enumerate subdomains
 
 `amass enum -d example.com`
 
+Sublist3r is another great tool that can be used to both passively and actively scan a domain.  To run a passive scan the following command can be run:
 
+`sublist3r -d example.com`
 
 ### BGP (Border Gateway Protocol) Enumeration
 
