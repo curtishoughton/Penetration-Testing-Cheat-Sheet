@@ -16,6 +16,7 @@ A repository of general notes created by a security consultant to help people ne
 2) [Buffer Overflows](Buffer-Overflows/readme.md)
 3) [File Transfer Between Hosts](File-Transfer/readme.md)
 4) [Payload Generation](Payload-Generation/README.md)
+5) [Spawning a TTY Shell](Techniques/spawning-tty.md)
 
 ## Cryptography
 
