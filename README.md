@@ -24,4 +24,4 @@ A repository of general notes created by a security consultant to help people ne
 
 ## Databases
 
-1) [PostGreSQL](PostGreSQL/readme.md)
+1) [PostGreSQL](PostgreSQL/readme.md)
