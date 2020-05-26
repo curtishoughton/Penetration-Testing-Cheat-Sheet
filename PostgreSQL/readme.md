@@ -31,7 +31,7 @@ The following auxiliary module can be used to read a file from the local file sy
 
 ## Manual Enumeration
 
-### Reading a file
+### Read Local file
 
 1) Connect to the postgres database 
 
