@@ -54,3 +54,7 @@ The following auxiliary module can be used to read a file from the local file sy
 4) Show the contents of the file stored within the table "tablename"
 
 `SELECT * FROM tablename limit 30 offset 0;`
+
+### Dump PostGreSQL Database Usernames and Password Hashes
+
+`select usename, passwd from pg_shadow;`
