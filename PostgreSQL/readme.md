@@ -21,6 +21,12 @@ Setting the RHOST value to the target server and using the following auxiliary m
 `use auxiliary/admin/postgres/postgres_sql`
 `set SQL CREATE USER <username>;`
 
+### Dump PostGreSQL Usernames and Password Hashes
+
+Setting the RHOST value to the target server and using the following auxiliary module:
+
+`use auxiliary/scanner/postgres/postgres_hashdump`
+
 ### Read Local File
 
 The following auxiliary module can be used to read a file from the local file system:
