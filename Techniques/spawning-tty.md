@@ -30,4 +30,18 @@ There are a number of ways to spawn TTY shells once a machine has been compromis
 
 exec "/bin/sh"
 
-*References: https://netsec.ws/?p=337 - Spawning a TTY Shell*
+# Making the Shell Fully Interactive
+
+To enable autocomplete within the shell use the following:
+
+1) Background the shell process using `CTRL+Z` 
+
+2) Enter `stty raw -echo`
+
+3) Foreground the process again using `fg`
+
+4) Then set the TERM variable to the name of your terminal using `export TERM=<terminalNameHere>`
+
+Once this has been done, you will be able to use tab autocomplete and scroll through historic terminal commands using the arrow keys.
+
+**References**: *https://netsec.ws/?p=337 - Spawning a TTY Shell*
