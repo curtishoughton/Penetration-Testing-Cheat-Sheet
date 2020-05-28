@@ -19,6 +19,7 @@ Setting the RHOST value to the target server and using the following auxiliary m
 Setting the RHOST value to the target server and using the following auxiliary module:
 
 `use auxiliary/admin/postgres/postgres_sql`
+
 `set SQL CREATE USER <username>;`
 
 ### Dump PostGreSQL Usernames and Password Hashes
@@ -32,7 +33,9 @@ Setting the RHOST value to the target server and using the following auxiliary m
 The following auxiliary module can be used to read a file from the local file system:
 
 `use auxiliary/admin/postgres/postgres_readfile`
+
 `set RFILE /path/to/file.txt`
+
 `set RHOSTS <IP>`
 
 ## Manual Enumeration
