@@ -67,3 +67,9 @@ The following auxiliary module can be used to read a file from the local file sy
 ### Bruteforcing using Hydra
 
 [Hydra PostGres Bruteforce](../password-cracking/hydra.md#postgresql-database-login)
+
+### Bruteforcing with NMAP
+
+The nmap NSE script "pgsql-brute" can be used to bruteforce postgres database login credentials using the following command:
+
+`nmap -p 5432 --script pgsql-brute --script-args userdb=<username_list.txt>,passdb=/path/to/password_wordlist.txt <IP_ADDRESS>`
