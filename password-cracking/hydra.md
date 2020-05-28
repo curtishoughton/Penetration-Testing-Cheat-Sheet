@@ -41,3 +41,11 @@ If SSH is running on a non-standard port, the `-s` parameter can be supplied to 
 To bruteforce a HTTP POST login form the following command can be used:
 
 `hydra -L /path/to/username-list.txt -P /path/to/password-wordlist.txt -t 1 http-post-form://<IP_ADDRESS> -m "/<loginPagePath>:UserNameParameter=^USER^&PasswordParameter=^PASS^&Login=<ID_of_login_button>:<message_if_login_fails>"`
+
+### PostGreSQL Database Login
+
+To bruteforce the login to a PostGreSQL database, you can use the following:
+
+`hydra -l postgres -P /path/to/password-wordlist.txt postgres://<IP_ADDRESS>`
+
+*Note this assumes you're trying to atttack the default user "postgres"*
