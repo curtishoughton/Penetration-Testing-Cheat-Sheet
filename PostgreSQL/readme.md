@@ -58,3 +58,9 @@ The following auxiliary module can be used to read a file from the local file sy
 ### Dump PostGreSQL Database Usernames and Password Hashes
 
 `select usename, passwd from pg_shadow;`
+
+## Bruteforcing Login Passwords
+
+### Bruteforcing using Hydra
+
+(Hydra Bruteforce)[https://github.com/curtishoughton/Penetration-Testing/blob/master/password-cracking/hydra.md#postgresql-database-login]
