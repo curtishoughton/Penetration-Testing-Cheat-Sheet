@@ -44,7 +44,7 @@ The following auxiliary module can be used to read a file from the local file sy
 
 1) Connect to the postgres database 
 
-`psql -h <IP> -U <username>`
+`psql -h <IP> -U <username> -W`
 
 2) Create a new table to store the contents of the file:
 
