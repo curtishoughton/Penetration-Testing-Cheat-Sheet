@@ -63,4 +63,4 @@ The following auxiliary module can be used to read a file from the local file sy
 
 ### Bruteforcing using Hydra
 
-(Hydra Bruteforce)[../password-cracking/hydra.md#postgresql-database-login]
+(Hydra Bruteforce)[../password-cracking/hydra.md]
