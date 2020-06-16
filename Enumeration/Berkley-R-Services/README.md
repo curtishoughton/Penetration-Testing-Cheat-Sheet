@@ -32,5 +32,19 @@ run
 
 ## Rlogin/Rwho Daemon
 
-The rlogin daemon, which by default operates on port 513, allows a user to login to a remote unix system. Access via 
+The rlogin daemon, which by default operates on port 513, allows a user to login to a remote unix system. This can also allow users to login without a password:
+
+` rlogin -l root <IP_Address>`
+
+A list of logged in users can be obtained using the following command:
+
+`rusers -al <IP_Address>`
+
+## RSH Daemon
+
+The Remote SHell (RSH) Daemon allows users to open a shell on a remote machine and execute commands:
+
+`rsh <IP_Address> <shell_command_to_be_ran>`
+
+
 
