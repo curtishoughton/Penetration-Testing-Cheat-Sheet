@@ -9,7 +9,8 @@ A repository of general notes created by a security consultant to help people ne
 3) [Network Scanning](Network-Scanning/README.md)
 4) [Enumeration](Enumeration/readme.md)
 5) [Exploitation]
-6) [Privilege Escalation](Privilege-Escalation/readme.md)
+6) [Post Comprmise Attacks](Post-Compromise/readme.md)
+7) [Privilege Escalation](Privilege-Escalation/readme.md)
 
 ## Techniques
 1) [Password Cracking](password-cracking/readme.md)
