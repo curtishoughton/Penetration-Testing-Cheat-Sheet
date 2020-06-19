@@ -2,4 +2,4 @@
 
 1) [Kerberoasting](kerberoasting.md)
 
-2) [Kerberos Golden Ticket)[Kerb-TGT.md]
+2) [Kerberos Golden Ticket](Kerb-TGT.md)
