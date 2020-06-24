@@ -2,7 +2,11 @@
 
 ## Dumping hashes from DC using Impacket secretsdump.py
 
+If you have access to an account that is able to dump domain credentials, either due to being a domain admin or having excessive privileges, the following command can be used:
+
 `sudo python secretsdump.py marvel.local/administrator:Password123\!@hydra-dc.marvel.local`
+
+Where `marvel.local` is the domain `administrator:Password123\!` is the username and password of the user that has the privileges to dump the domain hashes and `hydra-dc.marvel.local` is the fully qualified domain name (FQDN) of the domain.
 
 ## Create Golden Ticket using Impacket ticketer.py
 
