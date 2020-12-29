@@ -19,6 +19,12 @@ Once the service was reloaded, it would look at the path and now load the malici
 
 This is why any services that contain spaces within the binpath should contain `"` around them.
 
+## Finding Services that Auto Start
+
+### WMIC
+
+`wmic service get name,displayname,pathname,startmode | findstr /i "auto"`
+
 ## Locating Unquoted Service Paths
 
 ### CMD
