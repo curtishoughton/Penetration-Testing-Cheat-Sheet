@@ -2,7 +2,7 @@
 
 This section of the repository contains common enumeration techniques, with associated commands, for a number of services:
 
-1) [SMB](SMB/README.MD)
+1) [SMB](SMB/SMB.md)
 2) [Berkley R Services](Berkley-R-Services/BerkeleyR.md)
 3) Finger
 4) [NFS](NFS/README.md)
