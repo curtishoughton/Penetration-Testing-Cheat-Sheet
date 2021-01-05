@@ -4,4 +4,6 @@ Finger is a Unix service that can be interacted with remotely to obtain informat
 
 Default Port: **79**
 
+## List Logged in Users
 
+`finger -l @target.domain.com`
