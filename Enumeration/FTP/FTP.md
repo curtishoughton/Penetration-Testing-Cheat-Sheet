@@ -22,3 +22,15 @@ From here the anonymous user would be able to download files using `get <filenam
 NMAP can be used to automatilly scan for FTP misconfigurations and well-known vulnerabilities that exist within certain FTP server implementations.  The following command will check for a number of common misconfigurations and vulnerabilities:
 
 `nmap --script=ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum -p <21> <IP or Hostname>`
+
+## Python3 Pyftpdlib Temporary FTP Server
+
+Python 3 can be used to bring up a temporary FTP server when needed in a pentest. The following command will install the pyftpdlib library:
+
+`pip3 install pyftpdlib`
+
+Once installed the following command can be used to stand up a temporary FTP server within the directory it's started from:
+
+`python3 -m pyftpdlib -t <IP Address> -p <port>`
+
+If the "-t" and "-p" options aren't given, it will, by default, listen on all intefaces (0.0.0.0) on port 2121.
