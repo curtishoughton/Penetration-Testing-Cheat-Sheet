@@ -30,7 +30,7 @@ The following snmpwalk command can be used to extract information from a target 
 
 `snmpwalk -c <community string> <version> <IP Address or Hostname>`
 
-Optionally an <OID> numeric value can be specified after the hostname/IP Address, however, if not specified it will default to returning all information.
+Optionally an "<OID>" numeric value can be specified after the hostname/IP Address, however, if not specified it will default to returning all information.
   
 
 
