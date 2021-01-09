@@ -23,6 +23,23 @@ NMAP can be used to automatilly scan for FTP misconfigurations and well-known vu
 
 `nmap --script=ftp-anon,ftp-bounce,ftp-libopie,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,tftp-enum -p <21> <IP or Hostname>`
 
+## Metasploit Framework Enumeration
+
+The Metasploit Framework can also be used to enumerate FTP.  The following section shows some uses:
+
+### Anonymous Login
+
+```
+use auxiliary/scanner/ftp/anonymous
+set RHOSTS <IP Address>
+set RPORT <Port>
+exploit
+```
+
+### FTP Version
+
+
+
 ## Python3 Pyftpdlib Temporary FTP Server
 
 Python 3 can be used to bring up a temporary FTP server when needed in a pentest. The following command will install the pyftpdlib library:
