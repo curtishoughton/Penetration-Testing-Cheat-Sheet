@@ -30,7 +30,15 @@ The following snmpwalk command can be used to extract information from a target 
 
 `snmpwalk -c <community string> <version> <IP Address or Hostname>`
 
-Optionally an "<OID>" numeric value can be specified after the hostname/IP Address, however, if not specified it will default to returning all information.
+Optionally a numeric `OID` value can be specified after the hostname/IP Address, however, if not specified it will default to returning all information.
+
+## Enumeration Using snmp-check
+
+A second tool built into Kali Linux named snmp-check can be used to dump out all SNMP inormation providing the community string is known. This can be done using the following command:
+
+`snmp-check <IP address or hostname> -p <port> -c <community String> -v <version>`
+
+
   
 
 
