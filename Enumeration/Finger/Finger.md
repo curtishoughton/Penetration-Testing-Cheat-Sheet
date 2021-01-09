@@ -10,6 +10,8 @@ To get a list of users logged into a target system the following command can be 
 
 `finger -l @target.domain.com`
 
+## Finger User Enumeration Script
+
 The following perl script named "Finger-User-Enum" located on the Github page https://github.com/pentestmonkey/finger-user-enum, can be used to enumerate users:
 
 `perl finger-user-enum.pl -U /path/to/common/names.txt -t 10.10.10.76`
