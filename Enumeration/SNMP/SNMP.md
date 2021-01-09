@@ -38,7 +38,16 @@ A second tool built into Kali Linux named snmp-check can be used to dump out all
 
 `snmp-check <IP address or hostname> -p <port> -c <community String> -v <version>`
 
+##  Enumeration Using Metasploit Framework
 
-  
+Metasploit can also be used to extract information from SNMP.  The following command within metasploit can be used:
+
+```
+use auxiliary/scanner/snmp/snmp_enum
+set RHOSTS <IP Address or Hostname>
+set RPORT <Port>
+run
+```
+ 
 
 
