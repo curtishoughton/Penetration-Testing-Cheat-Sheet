@@ -28,4 +28,4 @@ SNMP also has several versions, currently `v1`, `v2c` and `v3`, therefore it is 
 
 The following snmpwalk command can be used to extract information from a target device:
 
-`snmpwalk -c <community string> <version> `
+`snmpwalk -c <community string> <version> <IP Address or Hostname>`
