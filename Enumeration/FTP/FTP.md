@@ -29,6 +29,8 @@ The Metasploit Framework can also be used to enumerate FTP.  The following secti
 
 ### Anonymous Login
 
+Check for FTP Anonymous Login:
+
 ```
 use auxiliary/scanner/ftp/anonymous
 set RHOSTS <IP Address>
@@ -38,6 +40,28 @@ exploit
 
 ### FTP Version
 
+Enumerate FTP Version:
+
+```
+use auxiliary/scanner/ftp/ftp_version
+set RHOSTS <IP Address>
+set RPORT <Port>
+exploit
+```
+
+### FTP Login
+
+Bruteforce FTP Login:
+
+```
+use auxiliary/scanner/ftp/ftp_login
+set RHOSTS <IP Address>
+set RPORT <Port>
+set user_file /path/to/usernames.txt
+set pass_file /path/to/passwords.txt
+exploit
+
+```
 
 
 ## Python3 Pyftpdlib Temporary FTP Server
