@@ -10,7 +10,7 @@ SNMP utilises management interface base's (MIBS), which are numerical values org
 
 `sudo apt install snmp-mibs-downloader download-mibs`
 
-An example of a MIB would be:
+An example of a MIB OID would be:
 
 `1.3.6.1.4.1.77.1.2.25`
 
@@ -29,3 +29,8 @@ SNMP also has several versions, currently `v1`, `v2c` and `v3`, therefore it is 
 The following snmpwalk command can be used to extract information from a target device:
 
 `snmpwalk -c <community string> <version> <IP Address or Hostname>`
+
+Optionally an <OID> numeric value can be specified after the hostname/IP Address, however, if not specified it will default to returning all information.
+  
+
+
