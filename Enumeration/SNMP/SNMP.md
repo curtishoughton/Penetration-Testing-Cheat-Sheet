@@ -53,6 +53,16 @@ run
 
 ### Bruteforcing Using OneSixtyOne
 
+The tool OneSixtyOne, built into Kali Linux, can be used to bruteforce the SNMP community string:
 
+`onesixtyone -c <community_string_wordlist.txt> -i <target IP address>.txt`
+
+The `-i` parameter will accept a single IP address or a list of IP addresses to bruteforce against.
+
+### Bruteforcing using Hydra
+
+Hydra, another popular bruteforce tool, can also be used to bruteforce SNMP community strings:
+
+`hydra -P /path/to/snmp-wordlist.txt -t <threads> -w 1 -f -v -V <ip address> snmp`
 
 
