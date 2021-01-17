@@ -10,3 +10,4 @@ This section of the repository contains common enumeration techniques, with asso
 6) [FTP](FTP/FTP.md)
 7) [SNMP](SNMP/SNMP.md)
 8) [SMTP](SMTP/SMTP.md)
+9) [LDAP](LDAP/LDAP.md)
