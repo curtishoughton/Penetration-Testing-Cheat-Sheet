@@ -26,11 +26,14 @@ This should result in the server responding with a `220` status code and potenti
 
 As stated above, the server may allow for username enumeration using the VRFY, EXPN and RCPT commands. Supported commands can be checked using NMAP. The following command assumes the server is using the default port of 25:
 
-``
+`nmap -vv -p25 -n --script smtp-commands <IP Address>`
 
+This will return a list of commands that are accepted by the server and will assist in deciding what commands can be used to enumerate users.
 
 ### SMTP-USER-ENUM Script
 
 The smtp-user-enum tool, built into Kali Linux, can be used to automate username enumeration via SMTP:
 
-`smtp-user-enum -U /path/to/usernames.txt -t <IP Address> -m 150`
+`smtp-user-enum -U /path/to/usernames.txt -t <IP Address> -m 150 -M <mode>`
+
+The `-M` parameter can be set to either VRFY, EXPN or RCPT, depending upon what commands the server allows.
