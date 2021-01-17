@@ -29,11 +29,40 @@ As stated above, the server may allow for username enumeration using the VRFY, E
 `nmap -vv -p25 -n --script smtp-commands <IP Address>`
 
 This will return a list of commands that are accepted by the server and will assist in deciding what commands can be used to enumerate users.
+### Manual Testing
 
-### SMTP-USER-ENUM Script
+Manual testing of the supported commands can be done using netcat or telnet. Replace the `<mode>` with VRFY, EXPN or RCPT, to enumerate users:
+
+Netcat:
+```
+nc -nvv <IP> <Port>
+<mode> <username>
+```
+Telnet:
+
+```
+telnet <IP> <Port>
+<mode> <username>
+```
+This will return either a `250` or `252` response code for any valid users that are discovered. An error message will appear for any invalid users. When enumerating, it is pretty clear when a valid user has been found using this method.
+
+### Automated Testing
+
+#### SMTP-USER-ENUM Script
 
 The smtp-user-enum tool, built into Kali Linux, can be used to automate username enumeration via SMTP:
 
 `smtp-user-enum -U /path/to/usernames.txt -t <IP Address> -m 150 -M <mode>`
 
 The `-M` parameter can be set to either VRFY, EXPN or RCPT, depending upon what commands the server allows.
+
+#### Metasploit Framework
+
+The metasploit framework can also be used to enumerate SMTP users.  If a port is not set, it will default to port 25:
+
+```
+use auxiliary/scanner/smtp/smtp_enum
+set RHOSTS <IP ADDRESS>
+set RPORT <Port>
+run 
+```
