@@ -63,11 +63,19 @@ smtp-vuln-cve2010-4344.nse
 smtp-vuln-cve2011-1720.nse
 smtp-vuln-cve2011-1764.nse
 ```
+##### Enumerate Users
 
 The snmp-enum-users nse script can be used to enumerate users. The mode is provided within curly braces, such as `{VRFY}`. Replace `{MODE}` with either `{VRFY}`,`{EXPN}` or `{RCPT}`
 
 `nmap -v -p25 -n --script smtp-enum-users --script-args smtp-enum-users.methods={MODE} <IP Address>`
 
+##### SMTP Open Relay
+
+Nmap can also be used to check is the server is configured to relay emails from any location with the following command:
+
+`nmap -v -p25 --script smtp-open-relay <IP Address>`
+
+Nmap will return whether the server is configured to relay emails.
 
 #### SMTP-USER-ENUM Script
 
