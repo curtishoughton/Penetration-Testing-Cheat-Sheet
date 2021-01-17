@@ -48,6 +48,27 @@ This will return either a `250` or `252` response code for any valid users that 
 
 ### Automated Testing
 
+#### NMAP
+
+Nmap has various NSE scripts that can be used for enumerating SMTP, bruteforcing and checking for known vulnerabilities against SMTP servers.  The current list of SMTP script supported is below:
+
+```
+smtp-brute.nse
+smtp-commands.nse
+smtp-enum-users.nse
+smtp-ntlm-info.nse
+smtp-open-relay.nse
+smtp-strangeport.nse
+smtp-vuln-cve2010-4344.nse
+smtp-vuln-cve2011-1720.nse
+smtp-vuln-cve2011-1764.nse
+```
+
+The snmp-enum-users nse script can be used to enumerate users. The mode is provided within curly braces, such as `{VRFY}`. Replace `{MODE}` with either `{VRFY}`,`{EXPN}` or `{RCPT}`
+
+`nmap -v -p25 -n --script smtp-enum-users --script-args smtp-enum-users.methods={MODE} <IP Address>`
+
+
 #### SMTP-USER-ENUM Script
 
 The smtp-user-enum tool, built into Kali Linux, can be used to automate username enumeration via SMTP:
