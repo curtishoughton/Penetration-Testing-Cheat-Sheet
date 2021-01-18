@@ -38,7 +38,7 @@ Extract all user objects using ldapsearch:
 
 `ldapsearch -x -h <IP Address> -D '<domain>\<username>' -w '<password>' -b "CN=Users,DC=<domain>,DC=<domain>"`
 
-Remembering the `DC=<domain>` would be replaced with the domain name I.E if the domain was mydomain.local, it would show as `DC=mydomain,DC=local`.
+Remembering the `DC=<domain>` would be replaced with the domain name - I.E if the domain was `mydomain.local`, it would show as `DC=mydomain,DC=local`.
 
 #### ldapsearch  Extract All Computer Objects
 
