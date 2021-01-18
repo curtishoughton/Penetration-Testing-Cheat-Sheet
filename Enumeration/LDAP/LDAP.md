@@ -51,3 +51,38 @@ Extract all computer objects using ldapsearch:
 Extract all domain admins objects using ldapsearch:
 
 `ldapsearch -x -h <IP Address> -D '<domain>\<username>' -w '<password>' -b "CN=Domain Admins,CN=Users,DC=<domain>,DC=<domain>"`
+
+
+### Python 3 ldap3 library
+
+Python 3 can be used in conjunction with the ldap3 library to enumerate ldap.  To install the ldap3 package the pip3 package manager can be used
+
+`pip3 install ldap3`
+
+From here the following script can be customised in order to execute queries against a server with LDAP enabled:
+
+#### Unauthenticated (Null Bind) Ldap Secure with SSL Enabled
+
+```python
+#import ldap3 library
+import ldap3
+
+# Specify connection settings to server specifying the IP Address, Port and whether or not SSL is required
+
+s = ldap3.Server(192.168.x.x,get_info=ldap3.ALL, port =636, use_ssl = True)
+
+# Create connection to port 636 using ldap secure (SSL)
+
+con = ldap3.Connection(s)
+con.bind()
+
+# Dump ALl LDAP, replace DOMAIN, DOMAIN, with the LDAP domain details, if the domain was mydomain.local, it would be DC=mydomain,DC=local
+
+con.search(search_base='DC=DOMAIN,DC=DOMAIN', search_filter='(&(objectClass=*))', search_scope='SUBTREE')
+
+# Print returned query
+
+print(con.entries)
+
+
+```
