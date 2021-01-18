@@ -78,11 +78,10 @@ con.bind()
 
 # Dump ALl LDAP, replace DOMAIN, DOMAIN, with the LDAP domain details, if the domain was mydomain.local, it would be DC=mydomain,DC=local
 
-con.search(search_base='DC=DOMAIN,DC=DOMAIN', search_filter='(&(objectClass=*))', search_scope='SUBTREE')
+con.search(search_base='DC=DOMAIN,DC=DOMAIN', search_filter='(&(objectClass=*))', search_scope='*')
 
 # Print returned query
 
 print(con.entries)
-
 
 ```
