@@ -76,7 +76,7 @@ s = ldap3.Server(192.168.x.x,get_info=ldap3.ALL, port =636, use_ssl = True)
 con = ldap3.Connection(s)
 con.bind()
 
-# Dump ALl LDAP, replace DOMAIN, DOMAIN, with the LDAP domain details, if the domain was mydomain.local, it would be DC=mydomain,DC=local
+# Dump All LDAP, replace DOMAIN, DOMAIN, with the LDAP domain details, if the domain was mydomain.local, it would be DC=mydomain,DC=local
 
 con.search(search_base='DC=DOMAIN,DC=DOMAIN', search_filter='(&(objectClass=*))', search_scope='*')
 
