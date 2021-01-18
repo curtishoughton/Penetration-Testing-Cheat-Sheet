@@ -32,3 +32,22 @@ Ldapsearch can be used to run a number of queries both authenticated and unauthe
 
 `ldapsearch -LLL -x -H ldap://<domain fqdn> -b '' -s base '(objectclass=*)'`
 
+#### ldapsearch Extract All User Objects
+
+Extract all user objects using ldapsearch:
+
+`ldapsearch -x -h <IP Address> -D '<domain>\<username>' -w '<password>' -b "CN=Users,DC=<domain>,DC=<domain>"`
+
+Remembering the `DC=<domain>` would be replaced with the domain name I.E if the domain was mydomain.local, it would show as `DC=mydomain,DC=local`.
+
+#### ldapsearch  Extract All Computer Objects
+
+Extract all computer objects using ldapsearch:
+
+`ldapsearch -x -h <IP Address> -D '<domain>\<username>' -w '<password>' -b "CN=Computers,DC=<domain>,DC=<domain>"`
+
+#### ldapsearch Extract All Domain Admins
+
+Extract all domain admins objects using ldapsearch:
+
+`ldapsearch -x -h <IP Address> -D '<domain>\<username>' -w '<password>' -b "CN=Domain Admins,CN=Users,DC=<domain>,DC=<domain>"`
