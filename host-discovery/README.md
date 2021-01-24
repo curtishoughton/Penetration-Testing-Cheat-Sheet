@@ -54,5 +54,29 @@ To check this is configured correctly the `ifconfig <interface>.<vlan_number>` o
 
 *Reference: Pages 90-91, Network Security Assessment Volume 3, Chris Mcnab, Oreilly Publishers*
 
+## LLMNR, NBT-NS and mDNS
 
+NBT-NS: 137 UDP
+LLMNR: 5355 UDP
+mDNS: 5353 UDP
+
+Both Link-Local Multicast Name Resolution and Net BIOS Name Service are used by Microsoft systems on the local network when DNS name resolution fails. It is possible to use a tool like `responder` to Man-In-The-Middle (MITM) and intercept failed lookups, in order to obtain Net NTLMv2 hashes:
+
+`responder - <interface> -rdwv`
+
+The responder arguments shown:
+
+```
+  -r, --wredir          Enable answers for netbios wredir suffix queries.
+                        Answering to wredir will likely break stuff on the
+                        network. Default: False
+  -d, --NBTNSdomain     Enable answers for netbios domain suffix queries.
+                        Answering to domain suffixes will likely break stuff
+                        on the network. Default: False
+  -w, --wpad            Start the WPAD rogue proxy server. Default value is
+
+  -v, --verbose         Increase verbosity.
+```
+
+Any failed lookups will be captured by responder and result in a NTLMv2 hash being captured. Any NTLMv2 hashes can be cracked using either John The Ripper or Hashcat in order to obtain plaintext credentials
 
