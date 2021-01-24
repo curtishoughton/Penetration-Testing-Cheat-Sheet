@@ -30,3 +30,29 @@ Nmap can also be used to conduct a TCP scan of a specified port accross an entir
 This command uses nmap to initiate a TCP host discovery scan (-sP) of all 254 hosts in the /24 (255.255.255.0) subnet for the 192.168.X.X network, looking for port 80.  For this scan to be effective, a commonly open port must be chosen - E.G port 445 (SMB) for Windows hosts, or port 22 (SSH) for Linux hosts.
 
 
+## 802.lQ Cisco Dynamic Trunking Protocol (DTP) 
+
+The VLAN protocol DTP is commonly used by Ciso devices to connect switches together via a "trunk". If the switch is in Dynamic Trunking mode, it is possible to analyse the DTP packets, emulate anoher switch, and hop on to a VLAN of the attacers choice.
+
+The dtpscan script found at https://github.com/commonexploits/dtpscan, can be used to detect DTP packets and identify what mode the switches on the network are in, and whether it's possible to perform a VLAN hopping attack. To run the script in Kali Linux use:
+
+`./dtpscan.sh`
+
+If it's found to be possible, Yersinia, which is built into Kali Linux, can be used to enable trunking and attain a list of VLANs with associated IP addresses.
+
+`yersinia -I` will start the program and will allow you to select the interface using the `a and b` keys on the keyboard. Then press `x` for DTP mode and press `1` to enable dynamic trunking. Pressing `g` at this point will show the VLANs and associated IP addresses within the GUI.
+
+Once a VLAN has been identified, a virtual interface can be configured within Kali Linux:
+
+```
+modprobe 8021q
+vconfig add <interface> <vlan_number>
+dhclient <interface>.<vlan_number>
+```
+
+To check this is configured correctly the `ifconfig <interface>.<vlan_number>` or `ip a` commands can be ran.
+
+*Reference: Pages 90-91, Network Security Assessment Volume 3, Chris Mcnab, Oreilly Publishers*
+
+
+
