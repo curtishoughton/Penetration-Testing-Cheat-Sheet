@@ -78,5 +78,15 @@ The responder arguments shown:
   -v, --verbose         Increase verbosity.
 ```
 
-Any failed lookups will be captured by responder and result in a NTLMv2 hash being captured. Any NTLMv2 hashes can be cracked using either John The Ripper or Hashcat in order to obtain plaintext credentials
+Any failed lookups will be captured by responder and result in a NTLMv2 hash being captured. Any NTLMv2 hashes can be cracked using either John The Ripper or Hashcat in order to obtain plaintext credentials.  The hash returned will look like:
+
+```
+Administrator::WIN-487IMQOIA8E:997b18cc61099ba2:3CC46296B0CCFC7A231D918AE1DAE521:0101000000000000B09B51939BA6D40140C54ED46AD58E890000000002000E004E004F004D00410054004300480001000A0053004D0042003100320004000A0053004D0042003100320003000A0053004D0042003100320005000A0053004D0042003100320008003000300000000000000000000000003000004289286EDA193B087E214F3E16E2BE88FEC5D9FF73197456C9A6861FF5B5D3330000000000000000
+```
+
+Hashcat can be used with mode `5600` to crack the hash:
+
+```
+hashcat -m 5600 <file-containing-hash.txt> /path/to/password-list.txt
+```
 
