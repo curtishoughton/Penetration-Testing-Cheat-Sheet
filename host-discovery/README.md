@@ -1,4 +1,4 @@
-# Host Discovery
+# Host / Local Network Discovery
 
 Once on an internal network the first stage is to discover hosts that are live.  The following section will detail software along with associated commands for achieving this task.
 
