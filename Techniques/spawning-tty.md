@@ -28,7 +28,7 @@ There are a number of ways to spawn TTY shells once a machine has been compromis
 
 ## Ruby
 
-exec "/bin/sh"
+`exec "/bin/sh"`
 
 # Making the Shell Fully Interactive
 
