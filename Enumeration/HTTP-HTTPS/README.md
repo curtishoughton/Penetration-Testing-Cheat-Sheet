@@ -2,7 +2,7 @@
 
 ## Directory Brute Force
 
-A number of tools can be ued to bruteforce directories on a web server in order to find hidden files and folders that are not publically available.
+A number of tools can be used to brute force directories on a web server in order to find hidden files and folders that are not publically available.
 
 ### Gobuster
 
