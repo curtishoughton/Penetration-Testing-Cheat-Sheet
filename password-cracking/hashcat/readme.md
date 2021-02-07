@@ -6,4 +6,4 @@ Hashcat is an open source password cracking software that can be used to recover
 ## Hashcat Examples
 
 1) [Truecrypt Container Password Cracking](truecrypt.md)
-2) [Bitlocker Drive Password Cracking (No TPM!)](bitlocker.md)
+
