@@ -43,6 +43,22 @@ To use smbmap with a password has that has been obtained, both the LM and NT has
 
 `smbmap -u username -p 'aad3b435b51404eeaad3b435b51404ee:NTHASH' -H 192.168.X.X`
 
+The `-x` allows a command to execute on the target host, providing the credentials of a local administrator are known.  The following command will run `ipconfig` on the target:
+
+`smbmap -u local_admin -p password1 -d workgroup -H 192.168.X.X -x 'ipconfig'`
+
+If you want to interact with a particular share the `-r` option can be specified with a share name:
+
+`smbmap -u local_admin -p password1 -d workgroup -H 192.168.X.X -r 'C$'`
+
+To download a file from a share the `--download` option can be used:
+
+`smbmap -u local_admin -p password1 -d workgroup -H 192.168.X.X --download 'C$\filename.txt'`
+
+To upload a file to a file share the `--upload` command can be used.  The first argument is the file to be uploaded and the second argument is the destination on the "victim" machine:
+
+`smbmap -u local_admin -p password1 -d workgroup -H 192.168.X.X --upload '/local/file/path/file_to_upload.txt' 'C$\destination\path\uploaded.txt'`
+
 ### Nmap
 
 Nmap contains NSE scripts that can be used for enumerating SMB shares:
