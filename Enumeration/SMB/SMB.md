@@ -67,6 +67,30 @@ Nmap contains NSE scripts that can be used for enumerating SMB shares:
 
 `nmap -p 445 -sT -vv --script=smb-enum-shares.nse,smb-enum-users.nse 192.168.X.X`
 
+#### Check Available Protocols
+
+Check what SMB protocols the host supports:
+
+`nmap -p 445 -sT -vv --script=smb-protocols 192.168.X.X`
+
+#### Check SMB Security Mode
+
+Check what SMB security protocols are enabled (E.G if message signing is required etc)
+
+`nmap -445 -sT -vv --script=smb-security-mode 192.168.X.X`
+
+#### Enumerate Logged in Users
+
+Check what users are logged into the system.  If no credentials are specified, it will default to trying "guest" login:
+
+`nmap -445 -sT -vv --script=smb-enum-sessions 192.168.X.X`
+
+To specify credentials the following can be appended to the command, where `<username>` and `<password>` should be changed to the user/pass credentials to try: 
+
+`nmap -445 -sT -vv --script=smb-enum-sessions --script-args smbusername=<username>,smbpassword=<password> 192.168.X.X`
+
+
+
 #### NSE SMB Script List
 
 ```
