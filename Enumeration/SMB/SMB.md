@@ -89,11 +89,11 @@ To specify credentials the following can be appended to the command, where `<use
 
 `nmap -p 445 -sT -vv --script=smb-enum-sessions --script-args smbusername=<username>,smbpassword=<password> 192.168.X.X`
 
-#### Enumerate Available Domains
+#### Enumerate Available Domain Information
 
 Return a list of domain specific information, such as users and groups (Use Local Admin Account for best results):
 
-`nmap -p 445 -sT -vv --script=smb-enum-sessions --script-args smbusername=<username>,smbpassword=<password> 192.168.X.X`
+`nmap -p 445 -sT -vv --script=smb-enum-domains --script-args smbusername=<username>,smbpassword=<password> 192.168.X.X`
 
 
 
