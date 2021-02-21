@@ -93,9 +93,17 @@ To specify credentials the following can be appended to the command, where `<use
 
 Return a list of domain specific information, such as users and groups (Use Local Admin Account for best results):
 
-`nmap -p 445 -sT -vv --script=smb-enum-domains --script-args smbusername=<username>,smbpassword=<password> 192.168.X.X`
+`nmap -p 445 -sT -vv --script=smb-enum-domains,smb-enum-groups --script-args smbusername=<username>,smbpassword=<password> 192.168.X.X`
 
+#### Enumerate Services on Target Machine
 
+Return a list of services running on target machine:
+
+`nmap -p 445 -sT -vv --script=smb-enum-services --script-args smbusername=<username>,smbpassword=<password> 192.168.X.X`
+
+#### Enumerate and list shares using "ls":
+
+`nmap -p 445 -sT -vv --script=smb-enum-shares,smb-ls --script-args smbusername=<username>,smbpassword=<password> 192.168.X.X`
 
 #### NSE SMB Script List
 
