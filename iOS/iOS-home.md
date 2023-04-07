@@ -6,3 +6,5 @@
 2) [Setting up SSH on a Jailbroken iOS Device](iOS-SSH-Setup.md)
  
 3) [Installing an IPA File on Jailbroken Device ](iOSIPAInstall.md)
+
+4) [Bypassing SSL Pinning Multiple Ways ](iOS-bypass-ssl-pinning.md)
