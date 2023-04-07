@@ -31,6 +31,7 @@ You will need multiple terminal windows open to do this.
 The SSH command will connect to the device over USB using local port "2222" which is redirected to port "44" on the iPhone (iproxy command set this up)
 
 The `-R 8080:127.0.0.1:8080` part of the SSH command remote port forwards 8080 onto the iOS device. 
+
 *In simple terms, I want to put my local port 8080 on Linux onto the iPhone as port 8080*
 
 ## Configuring the device to forward traffic to interception proxy
