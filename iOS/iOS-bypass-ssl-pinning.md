@@ -8,12 +8,39 @@ To test the backend of an iOS application, which could be a web server running a
 
 ## Installing the Required Tools
 
-The Frida and Objection frameworks need to be installed on both the iOS device, using Cydia, and Linux system using Python 3's `pip3` package manager.
+The Frida frameworks need to be installed on both the iOS device, using Cydia, and Linux system using Python 3's `pip3` package manager. The tool `Objection` will need to be installed using Python 3's `pip` package manager too, which acts as a wrapper around Frida, to make interaction with the framework easier.
 
 ### Installing Frida on a Jailbroken iOS Device
 
-The repository 
+Open Cydia and select "Sources", click "Add" and add the following repository:
 
+`https://build.frida.re`
+
+Click "Sources" and press  "Refresh". This will refresh all sources in Cydia. 
+
+Search for "Frida" and click install. The latest version - at the time of writing - is `Frida v16.0.11`
+
+### Installing Frida and Objection on the Linux host
+
+#### Frida installation
+
+Frida can be installed using the `pip3` Python 3 package manager. It is important that the version installed on Linux matches the version installed on the iOS device. Otherwise the setup may not work!
+
+To install the correct version of Frida using "pip3" type in a Linux terminal:
+
+`pip3 install frida==16.0.10`
+
+By specifying `==16.0.10` you can select the exact version of Frida to install that matches the iOS device.
+
+Now install "frida-tools
+
+`pip3 install frida-tools`
+
+#### Objection Installation
+
+Now the "objection" tool can be installed, objection acts as a wrapper around Frida to make usability easier:
+
+`pip3 install objection`
 
 
 ## Setting up for Interception of HTTP(S) traffic
