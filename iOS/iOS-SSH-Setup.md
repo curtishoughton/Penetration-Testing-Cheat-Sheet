@@ -32,7 +32,12 @@ The SSH command will connect to the device over USB using local port "2222" whic
 
 The `-R 8080:127.0.0.1:8080` part of the SSH command remote port forwards 8080 onto the iOS device. 
 
-*In simple terms, I want to put my local port 8080 on Linux onto the iPhone as port 8080*
+*In simple terms, I want to put my local port 8080 from Linux onto the iPhone/iOS device as port 8080*
+
+## Interacting with SSH
+
+Now you could use the second terminal to run commands on the iOS device, however, if you want to just have an SSH terminal and do NOT want to port forward 8080. Then just run the command `ssh root@127.0.0.1 -p 2222`. This will just create a standard SSH connection to the device as the "root" user and allow you to run system commands as normal.
+
 
 ## Configuring the device to forward traffic to interception proxy
 
@@ -47,5 +52,11 @@ The iPhone can then be configured to forward traffic to port 8080 by setting up 
 
 This will mean that all internet traffic will be forwarded to port 8080. Because of the SSH remote port forward, this will then be routed to port "8080" on the Linux machine. 
 
+Now you will have an SSH terminal open on the device. You may notice errors such as `connect_to 127.0.0.1 port 8080: failed.`. This is fine, this is just due to the fact we have told the device to forward traffic to port "8080", however, if an interception proxy such as Burp Suite is not open and listening on port "8080" on the Linux device. This will cause connections on the device to fail, resulting in the error message.
+
 Once Burp Suite is open, this listens, by default, for traffic on port "8080". Therefore this will put you in a position to be able to intercept traffic.
+
+**NOTE THAT YOU MAY NOT STILL SEE TRAFFIC AT THIS POINT AND APPS ON THE DEVICE WILL PROBABLY HAVE NO INTERNET CONNECTION. SEE THE SSL PINNING BYPASS SECTION OF THE CHEATSHEET**
+
+Most applications on iOS will implement SSL pinning, which will prevent you from seeing and intercepting TLS/SSL HTTPS traffic. You will need to make sure that your Linux system has an internet connection too, so that traffic intercepted within Burp Suite can be forwarded to the internet.
 
