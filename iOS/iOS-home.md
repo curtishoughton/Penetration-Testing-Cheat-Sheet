@@ -7,4 +7,6 @@
  
 3) [Installing an IPA File on Jailbroken Device ](iOSIPAInstall.md)
 
-4) [Bypassing SSL Certificate Pinning Multiple Ways ](iOS-bypass-ssl-pinning.md)
+4) [Setting up Burp Suite Certificate CA for Interception](iOS-burp-CA-install.md)
+
+5) [Bypassing SSL Certificate Pinning Multiple Ways ](iOS-bypass-ssl-pinning.md)
