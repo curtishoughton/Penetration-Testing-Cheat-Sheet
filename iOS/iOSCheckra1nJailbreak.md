@@ -6,6 +6,8 @@ For this example I am using a Linux system with Ubuntu 20.04 installed
 
 ## Install Checkra1n
 
+Install checkra1n on Ubuntu using the following steps
+
 Instructions taken from [here](https://checkra.in/linux)
 
 ```
@@ -15,3 +17,16 @@ sudo apt-get update
 sudo apt-get install checkra1n
 ```
 
+## Run checkra1n on Ubuntu
+
+Open a terminal and run checkra1n as root:
+
+`sudo checkra1n`
+
+## Start the Jailbreak process
+
+Once checkra1n has opened, connect the iOS device and click "Trust" on the device screen.
+
+To start the process click `Start` within checkra1n and this will guide you through the full Jailbreak process.
+
+The device goes into DFU mode during this process and will restart. Once the device restarts it will be Jailbroken
