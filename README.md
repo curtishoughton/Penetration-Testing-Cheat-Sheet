@@ -1,6 +1,6 @@
 # Penetration-Testing
 
-A repository of general notes created by a security consultant to help people new to the field of penetration testing.  This repository is aimed at people looking to get into a career as a penetration tester, along helping anyone looking to pass the Offensive Security OSCP exam.  The resources that are listed on here have been curated from a number of online sources and books, to act as one point of reference.
+A repository of general notes created by a security consultant to help people new to the field of penetration testing.  This repository is aimed at people looking to get into a career as a penetration tester, along helping anyone looking to pass the Offensive Security OSCP exam.  The resources that are listed on here have been curated from a number of online sources and books, to act as one point of reference. This is very much work-in-progress and I will add to this repository as frequently as I can.
 
 ## Infrastructure Assessments
 
