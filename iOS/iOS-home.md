@@ -7,4 +7,4 @@
  
 3) [Installing an IPA File on Jailbroken Device ](iOSIPAInstall.md)
 
-4) [Bypassing SSL Pinning Multiple Ways ](iOS-bypass-ssl-pinning.md)
+4) [Bypassing SSL Certificate Pinning Multiple Ways ](iOS-bypass-ssl-pinning.md)
