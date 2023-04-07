@@ -2,7 +2,7 @@
 
 A repository of general notes created by a security consultant to help people new to the field of penetration testing.  This repository is aimed at people looking to get into a career as a penetration tester, along helping anyone looking to pass the Offensive Security OSCP exam.  The resources that are listed on here have been curated from a number of online sources and books, to act as one point of reference.
 
-## Contents
+## Infrastructure Assessments
 
 1) [Open Source Intelligence (OSINT)](Open-Source-Intelligence/readme.md)
 2) [Host Discovery](host-discovery/README.md)
@@ -12,6 +12,20 @@ A repository of general notes created by a security consultant to help people ne
 6) [Post Comprmise Attacks](Post-Compromise/readme.md)
 7) [Privilege Escalation](Privilege-Escalation/readme.md)
 
+## Web Application Security
+
+## Mobile Application Security
+
+1) [iOS Security](iOS/iOS-home.md)
+
+## Cloud Security Assessments
+
+## Databases
+
+1) [PostGreSQL](PostgreSQL/readme.md)
+
+## Cryptography
+
 ## Techniques
 1) [Password Cracking](password-cracking/readme.md)
 2) [Buffer Overflows](Buffer-Overflows/readme.md)
@@ -19,14 +33,4 @@ A repository of general notes created by a security consultant to help people ne
 4) [Payload Generation](Payload-Generation/README.md)
 5) [Spawning a TTY Shell](Techniques/spawning-tty.md)
 
-## Cryptography
-
 ## Scripts and Tools
-
-## Databases
-
-1) [PostGreSQL](PostgreSQL/readme.md)
-
-## Mobile Application Security
-
-1) [iOS Security](iOS/iOS-home.md)
