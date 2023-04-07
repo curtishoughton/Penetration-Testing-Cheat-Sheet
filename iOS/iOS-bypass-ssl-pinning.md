@@ -45,4 +45,51 @@ Now the "objection" tool can be installed, objection acts as a wrapper around Fr
 
 ## Setting up for Interception of HTTP(S) traffic
 
-To be in a position to see the traffic from the mobile application. An interception proxy, such as Burp Suite, has to be used. Please see the section []() for setting up a remote SSH port forward on port "8080" and configure the device to 
+To be in a position to see the traffic from the mobile application. An interception proxy, such as Burp Suite, has to be used. Please see the section [SSH Setup](iOS-SSH-Setup.md) for setting up a remote SSH port forward on port "8080" and configuring the device to send traffic using a proxy to port "8080".
+
+
+## Bypassing SSL Pinning Using Objection
+
+If everything is set up correctly you should now be able to run Frida on the Linux machine, whilst the iOS device is connected, to list running applications:
+
+`frida-ps -Uai`
+
+This should show a list of applications running on the iOS device:
+
+```
+└─$ frida-ps -Uai                                                                                                                                                                                             2 ⨯
+  PID  Name                          Identifier                 
+5  ----------------------------  ---------------------------
+11569  Cydia                         com.saurik.Cydia                  
+ 2259  Settings                      com.apple.Preferences      
+    -  App Store                     com.apple.AppStore         
+    -  Books                         com.apple.iBooks           
+    -  Calculator                    com.apple.calculator       
+    -  Calendar                      com.apple.mobilecal       
+```
+
+Open the target applicaton you have installed on the device and run `frida-ps -Uai` again. This should show the target process with associated proccess ID. For this example, we will target the Cydia application and use the Objection framework to disable SSL pinning:
+
+Select the target application and explore with objection:
+
+`objection -g com.saurik.Cydia explore`
+
+This will reopen the target application and inject Frida into the process.
+
+To bypass SSL pinning using the Objection framework run the following command:
+
+`ios sslpinning disable`
+
+This will show the output:
+
+```
+Cydia on (iPhone: 14.1) [usb] # ios sslpinning disable
+(agent) Hooking common framework methods
+(agent) Found NSURLSession based classes. Hooking known pinning methods.
+(agent) Hooking lower level SSL methods
+(agent) Hooking lower level TLS methods
+(agent) Hooking BoringSSL methods
+
+```
+
+Now if you use the application you should see HTTPS traffic appear in Burp Suite if the SSL Certificate pinning bypass has worked.
