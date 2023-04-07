@@ -32,7 +32,7 @@ To install the correct version of Frida using "pip3" type in a Linux terminal:
 
 By specifying `==16.0.10` you can select the exact version of Frida to install that matches the iOS device.
 
-Now install "frida-tools
+Now install "frida-tools"
 
 `pip3 install frida-tools`
 
