@@ -6,7 +6,7 @@ For this example I am using a Linux system with Ubuntu 20.04 installed
 
 ## Install Checkra1n
 
-Instructions taken from [](https://checkra.in/linux)
+Instructions taken from [here](https://checkra.in/linux)
 
 ```
 wget -O - https://assets.checkra.in/debian/archive.key | gpg --dearmor | sudo tee /usr/share/keyrings/checkra1n.gpg >/dev/null
