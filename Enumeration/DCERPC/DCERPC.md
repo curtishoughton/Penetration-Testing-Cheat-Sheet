@@ -27,6 +27,14 @@ Once connected you will see the prompt:
 rpcclient $>
 ```
 
+The `lsaquery` command can be used to get the Domain SID:
+
+```shell
+rpcclient $> lsaquery
+Domain Name: ZA  
+Domain Sid: S-1-5-21-3330634377-1326264276-632209373
+```
+
 
 
 
