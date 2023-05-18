@@ -14,7 +14,7 @@ DCE/RPC stands for Distributed Computing Environment/Remote Procedure Call. It i
 
 The software `rpcclient` is built into many Linux distributions, including Kali Linux, and can be used to interact with Remote Procedure Calls (RPCs) on a remote Windows system. Additionally, if Anonymous login is available, it is possible to obtain details about the domain without user authentication.
 
-### RPCCLIENT Anonymous Bind
+### RPCCLIENT - Anonymous Bind
 
 The following command can be used to connect anonymously to RPC without supplying user credentials:
 
@@ -35,7 +35,13 @@ Domain Name: ZA
 Domain Sid: S-1-5-21-3330634377-1326264276-632209373
 ```
 
+### RPCCLIENT - Authenticated User
 
+If you have an AD account, the following command can be used to authenticate to a server using rpcclient:
+
+```shell
+rpcclient -U "<domain>\<username>" <IP>
+```
 
 
 ## Using IOXIDResolver to get IPv6 Address
