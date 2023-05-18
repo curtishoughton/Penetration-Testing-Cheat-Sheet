@@ -91,6 +91,6 @@ if __name__ == "__main__":
    main(sys.argv[1:])
 ```
 
-To run the command use `python3 IOXIDResolver.py -t <IPv4>
+To run the command use `python3 IOXIDResolver.py -t <IPv4>`
 
 
