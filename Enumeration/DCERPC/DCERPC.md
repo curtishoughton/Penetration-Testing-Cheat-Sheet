@@ -10,6 +10,17 @@ DCE/RPC stands for Distributed Computing Environment/Remote Procedure Call. It i
 * **RPC**: 135 TCP/UDP
 * **DYNAMIC RPC PORTS**: 49152-65535/TCP
 
+## RPCCLIENT
+
+The software `rpcclient` is built into many Linux distributions, including Kali Linux, and can be used to interact with Remote Procedure Calls (RPCs) on a remote Windows system. Additionally, if Anonymous login is available, it is possible to obtain details about the domain without user authentication.
+
+### RPCCLIENT Anonymous Bind
+
+The following command can be used to connect anonymously to RPC without supplying user credentials
+
+`rpcclient -N -U "" <IP>`
+
+
 ## Using IOXIDResolver to get IPv6 Address
 
 ### rpcmap.py
