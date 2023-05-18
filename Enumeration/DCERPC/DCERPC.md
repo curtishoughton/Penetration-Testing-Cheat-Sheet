@@ -91,6 +91,15 @@ if __name__ == "__main__":
    main(sys.argv[1:])
 ```
 
-To run the command use `python3 IOXIDResolver.py -t <IPv4>`
+To run the command use the python script is `python3 IOXIDResolver.py -t <IPv4>`
+
+This will then return the following output:
+
+```shell
+[*] Retrieving network interface of <IP>
+Address: <hostname>
+Address: <IPv4>
+Address: <IPv6> (if available)
+```
 
 
