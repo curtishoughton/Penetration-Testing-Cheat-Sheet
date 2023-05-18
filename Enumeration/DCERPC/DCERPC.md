@@ -16,9 +16,18 @@ The software `rpcclient` is built into many Linux distributions, including Kali 
 
 ### RPCCLIENT Anonymous Bind
 
-The following command can be used to connect anonymously to RPC without supplying user credentials
+The following command can be used to connect anonymously to RPC without supplying user credentials:
 
-`rpcclient -N -U "" <IP>`
+```shell
+rpcclient -N -U "" <IP>
+```
+Once connected you will see the prompt:
+
+```shell
+rpcclient $>
+```
+
+
 
 
 ## Using IOXIDResolver to get IPv6 Address
