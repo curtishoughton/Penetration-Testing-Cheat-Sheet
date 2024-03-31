@@ -2,16 +2,16 @@
 
 This section will cover everything redteaming, using the Lockheed Martin Cyber Killchain, Unified Kill Chain and Mitre ATT&CK as the basis for each section
 
-# Reconnaissance
+## Reconnaissance
 
-# Weaponisation
+## Weaponisation
 
-# Delivery
+## Delivery
 
-# Exploitation
+## Exploitation
 
-# Installation
+## Installation
 
-# Command and Control
+## Command and Control
 
-# Actions on Objectives
+## Actions on Objectives
