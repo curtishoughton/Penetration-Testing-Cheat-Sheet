@@ -34,3 +34,7 @@ A repository of general notes created by a security consultant to help people ne
 5) [Spawning a TTY Shell](Techniques/spawning-tty.md)
 
 ## Scripts and Tools
+
+## Red Teaming
+
+1 [Red Teaming](redteam/redteam.md)
