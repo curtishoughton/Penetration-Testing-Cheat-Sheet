@@ -7,7 +7,7 @@ A repository of general notes created by a security consultant to help people ne
 1) [Open Source Intelligence (OSINT)](Open-Source-Intelligence/readme.md)
 2) [Host Discovery](host-discovery/README.md)
 3) [Network Scanning](Network-Scanning/README.md)
-4) [Enumeration](Enumeration/readme.md)
+4) [Enumeration](Enumeration/enumeration.md)
 5) [Exploitation](exploitation/readme.md)
 6) [Post Comprmise Attacks](Post-Compromise/readme.md)
 7) [Privilege Escalation](Privilege-Escalation/readme.md)
