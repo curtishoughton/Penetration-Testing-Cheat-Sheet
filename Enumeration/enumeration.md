@@ -2,7 +2,7 @@
 
 ## Defense Evasion
 
-1) [Windows Defender Exclusions]()
+1) [Windows Defender Exclusions](defense-evasion/defender-exclusions.md)
 
 ## Service Enumeration
 
