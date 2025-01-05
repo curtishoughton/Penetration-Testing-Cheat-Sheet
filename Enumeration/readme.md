@@ -1,5 +1,11 @@
 # Enumeration
 
+## Defense Evasion
+
+1) [Windows Defender Exclusions]()
+
+## Service Enumeration
+
 This section of the repository contains common enumeration techniques, with associated commands, for a number of services:
 
 1) [SMB](SMB/SMB.md)
