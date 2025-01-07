@@ -42,6 +42,7 @@ This section will cover everything redteaming, using the Lockheed Martin Cyber K
 ## Reconnaissance
 
 ### [**T1595** Active Scanning](/redteam/active-scanning/active-scanning.md)
+### [**T1592** Gather Victim Host Information](/redteam/gather-vict-info/T1592-Gatther-Victim-Host-Info.md)
 
 ## Weaponisation
 
