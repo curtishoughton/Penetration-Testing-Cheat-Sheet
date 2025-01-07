@@ -101,3 +101,16 @@ To bruteforce directories using FFUF, where `-w` is the path to the wordlist and
 ffuf -w /path/to/wordlist -u https://target/FUZZ
 ```
 
+#### Dirsearch
+
+Dirsearch can be installed from the github repo:
+
+```shell
+https://github.com/maurosoria/dirsearch
+```
+
+To bruteforce directories using dirsearch, where `-e` is the extensions to search `-u` is the target URL and `-w` is the path to the wordlist:
+
+```shell
+python3 dirsearch.py -e php,html,js -u https://target -w /path/to/wordlist
+```
