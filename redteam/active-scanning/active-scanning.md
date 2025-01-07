@@ -95,4 +95,9 @@ FFUF can be installed from the github repo:
 https://github.com/ffuf/ffuf
 ```
 
+To bruteforce directories using FFUF, where `-w` is the path to the wordlist and `-u` is the target URL. The word `FUZZ` needs to be supplied within the URL so the tool knows where to insert the wordlist entries:
+
+```shell
+ffuf -w /path/to/wordlist -u https://target/FUZZ
+```
 
