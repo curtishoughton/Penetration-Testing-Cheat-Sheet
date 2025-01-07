@@ -51,6 +51,7 @@ To use snmpwalk on a Linux system such as Kali Linux, install SNMP Mibs using:
 ```shell
 sudo apt update
 sudo apt install snmp snmp-mibs-downloader -y
+sudo download-mibs
 ```
 
 Once the SNMP mibs are installed the tool `snmpwalk` can be used to query SNMP over port 161/UDP to reveal critical system information. 
@@ -94,4 +95,50 @@ IPMI (Intelligent Platform Management Interface) and BMC (Baseboard Management C
 
 IPMI or BMC interfaces typically run on ports 623/UDP and 664/TCP
 
-Nmap can be used to scan for 
+Nmap can be used to scan for and detect the IPMI version running:
+
+```shell
+nmap -sU -p 623 --script=ipmi-version <target_ip>
+```
+
+The `ipmi-version` nse script will sometimes give a Manufacturer ID, Product ID and Device ID as part of the response:
+
+```shell
+PORT    STATE SERVICE
+623/udp open  asf-rmcp
+| ipmi-version:
+|   IPMI Version: 2.0
+|   Manufacturer ID: 47488 (Dell)
+|   Product ID: 32
+|_  Device ID: 0
+```
+
+IPMI or BMC commonly expose web servers or SSH for accessing teh device, which can be enumerated using `nmap`:
+
+```
+sudo nmap -sS -sV -sC -p 22,80,443,623,664 <target_ip>
+```
+
+##### Enumerating IPMI Data with `ipmitool`
+
+Once IPMI/BNC systems are identified, `ipmitool` can be used to interact with them
+
+Installing `ipmitool` in Linux:
+
+```bash
+sudo apt update
+sudo apt install ipmitool -y
+```
+
+Basic Usage:
+
+```bash
+ipmitool -I lanplus -H <target_ip> -U <username> -P <password> chassis status
+```
+
+Command Overview:
+
+* -I lanplus: Use LAN interface (IPMI 2.0).
+* -H <target_ip>: Target IP address.
+* -U <username> and -P <password>: Credentials (try defaults like admin/admin).
+
