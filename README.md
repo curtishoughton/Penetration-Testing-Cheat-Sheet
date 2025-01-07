@@ -41,7 +41,7 @@ This section will cover everything redteaming, using the Lockheed Martin Cyber K
 
 ## Reconnaissance
 
-### [**T1595** Active Scanning](active-scanning/active-scanning.md)
+### [**T1595** Active Scanning](/redteam/active-scanning/active-scanning.md)
 
 ## Weaponisation
 
