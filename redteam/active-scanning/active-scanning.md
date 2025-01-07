@@ -42,7 +42,13 @@ A better alternative would be Google's `Nuclei` project, which can test for an i
 
 #### Nuclei Vulnerability Scanner
 
-Nuclei requires GO lang v1.21 to install successfully. Run the following command to get the repo
+Github project location
+
+```shell
+https://github.com/projectdiscovery/nuclei
+```
+
+Nuclei requires GO lang v1.21 to install successfully. Run the following command to get Nuclei:
 
 ```shell
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
