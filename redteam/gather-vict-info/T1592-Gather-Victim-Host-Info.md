@@ -34,3 +34,60 @@ nmap -sS -sV --script=banner -p <port> <IP>
 ```
 
 The banner may leak hardware information, such as Make/Model/Serial number.
+
+##### Simple Network Management Protocol (SNMP) Port: 161/UDP
+
+The Simple Network Management Prococol (SNMP) operates on UDP port 161 and can give extremely detailed information about a device and its running configuration. A common misconfiguration for SNMP is having the Read/Write or Read-Only community string(s) set to the default values:
+
+```shell
+Read-Only Community String: public
+Read/Write Community String: private
+```
+
+If the device uses the default community strings along with SNMP version 1 or v2c, it is possible to dump configuration data from the device. This can include Make/Model/Serial Number/Network Interfaces and much more.
+
+To use snmpwalk on a Linux system such as Kali Linux, install SNMP Mibs using:
+
+```shell
+sudo apt update
+sudo apt install snmp snmp-mibs-downloader -y
+```
+
+Once the SNMP mibs are installed the tool `snmpwalk` can be used to query SNMP over port 161/UDP to reveal critical system information. 
+
+snmpwalk command explanation:
+
+```shell
+-v 1: SNMP version 1.
+-c public: Community string (public). Or -c "private" for private.
+192.168.1.10: Target device IP.
+system: Fetch system information OID (e.g., system description, uptime, etc.).
+```
+
+Example 1: SNMP Version 1 (Public Community String)
+
+```shell
+snmpwalk -v 1 -c public 192.168.1.10 system
+```
+
+Example 2: SNMP Version 1 (Private Community String)
+
+```shell
+snmpwalk -v 1 -c private 192.168.1.10 system
+```
+
+Example 3: SNMP Version 2c (public Community String)
+
+```shell
+snmpwalk -v 2c -c public 192.168.1.10 system
+```
+
+Example 4: SNMP Version 2c (private Community String)
+
+```shell
+snmpwalk -v 2c -c private 192.168.1.10 system
+```
+
+
+
+#### IPMI & BMC Interfaces
