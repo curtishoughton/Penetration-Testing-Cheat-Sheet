@@ -88,6 +88,10 @@ Example 4: SNMP Version 2c (private Community String)
 snmpwalk -v 2c -c private 192.168.1.10 system
 ```
 
-
-
 #### IPMI & BMC Interfaces
+
+IPMI (Intelligent Platform Management Interface) and BMC (Baseboard Management Controller) allow out-of-band management of servers and hardware, often used for remote monitoring, rebooting, and troubleshooting. These systems are attractive targets because misconfigurations or default credentials can expose detailed hardware information and even control over the hardware.
+
+IPMI or BMC interfaces typically run on ports 623/UDP and 664/TCP
+
+Nmap can be used to scan for 
