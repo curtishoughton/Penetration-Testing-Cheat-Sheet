@@ -35,6 +35,22 @@ A repository of general notes created by a security consultant to help people ne
 
 ## Scripts and Tools
 
-## Red Teaming
+# Red Teaming
 
-1 [Red Teaming](redteam/redteam.md)
+This section will cover everything redteaming, using the Lockheed Martin Cyber Killchain, Unified Kill Chain and Mitre ATT&CK as the basis for each section
+
+## Reconnaissance
+
+### [**T1595** Active Scanning](active-scanning/active-scanning.md)
+
+## Weaponisation
+
+## Delivery
+
+## Exploitation
+
+## Installation
+
+## Command and Control
+
+## Actions on Objectives
