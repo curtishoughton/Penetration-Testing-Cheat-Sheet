@@ -33,6 +33,32 @@ sudo nmap -sS -p 21,22,23,25,53,69,80,81,88,102,110,111,137,139,143,389,427,443,
 
 ## **T1595.002** Vulnerability Scanning
 
-Vulnerability scanning can be conducted with a wide range of security tooling such as Tennable's Nessus, which is a well-known vulnerability scanner many pentesters use. However, scanning with Nessus on a red team would be very noisy. A better alternative would be Google's `Nuclei` project, which can test for an individual vulnerability or a suite of vulnerabilities if a vulnerability testing template has been created.
+Vulnerability scanning can be conducted with a wide range of security tooling such as Tennable's Nessus, which is a well-known vulnerability scanner many pentesters use. However, scanning with Nessus on a red team would be very noisy. 
+
+A better alternative would be Google's `Nuclei` project, which can test for an individual vulnerability or a suite of vulnerabilities if a vulnerability testing template has been created. The tool is primarily used to test for web-based vulnerabilities, however, it does have scope for interacting with RAW sockets.
+
+
+### T1595.002 Procedure
+
+#### Nuclei Vulnerability Scanner
+
+Nuclei requires GO lang v1.21 to install successfully. Run the following command to get the repo
+
+```shell
+go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+```
+
+Nuclei uses YAML templates for testing vulnerabilities, which can be downloaded from many github repositories online. The main project discovery templates are located here:
+
+```shell
+https://github.com/projectdiscovery/nuclei-templates
+```
+
+To run a specific template to check for a vulnerability against a URL (note -l can be used with a text file lix of URL's instead of -target):
+
+```shell
+nuclei -target https://example.com -t /path/to/nuclei/templates/nuclei-template.yaml
+```
+
 
 
