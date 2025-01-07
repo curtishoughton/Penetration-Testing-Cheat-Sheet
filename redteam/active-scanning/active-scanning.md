@@ -66,5 +66,33 @@ To run a specific template to check for a vulnerability against a URL (note -l c
 nuclei -target https://example.com -t /path/to/nuclei/templates/nuclei-template.yaml
 ```
 
+##T1595.003 Wordlist Scanning
+
+Wordlist scanning focuses on bruteforcing directories and files on a web server in order to find sensitive data or pages that do not have correct authentication or authorisation controls in order to compromise the website or underlying infrastructure. There are many tools available for directory brute forcing, some of the more popular being Gobuster, ffuf or dirsearch.
+
+### T1595.003 Procedure
+
+#### Gobuster
+
+Gobuster can be installed from the main github repository:
+
+```shell
+https://github.com/OJ/gobuster
+```
+
+To bruteforce directories the following command can be used, make sure to read the full help file for all options:
+
+```shell
+gobuster dir -u https://example.com -w /path/to/wordlist/wordlist.txct -x txt,php,html,cgi
+```
+(-u URL -w wordlist -x file extensions to search for)
+
+#### FFUF
+
+FFUF can be installed from the github repo:
+
+```shell
+https://github.com/ffuf/ffuf
+```
 
 
